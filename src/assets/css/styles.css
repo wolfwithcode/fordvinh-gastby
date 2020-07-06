@@ -1,0 +1,58 @@
+body {
+  padding-top: 60px;
+}
+
+#promo {
+  text-align: center;
+  /*padding: 40px;*/
+  background: url(../../assets/img/back.jpg) no-repeat;
+  background-size: cover;
+}
+
+#promo .jumbotron {
+  border-radius: 40px;
+  background-color: rgba(255,255,255,0.75);
+  /*border-style: dotted;*/
+}
+
+#baogiatonghop {
+  text-align: center;
+  /*padding: 40px;*/
+  border-radius: 30px;
+}
+
+#baogiatonghop .jumbotron {
+  border-style: dotted;
+}
+
+#baogiatonghop .list-group {
+  text-align: left;
+  /*padding: 10px;*/
+}
+
+.fa.fa-dot-circle-o {
+  padding-right: 20px;
+}
+
+#uudai1 {
+  text-align: left;
+  /*border-radius: 1em 0 0 1em;*/
+  background: #73AD21;
+}
+
+#uudai2 {
+  text-align: left;
+  /*border-radius: 1em 0 0 1em;*/
+  background: #73AD21;
+}
+
+#bao-gia-ford-ranger {
+  text-align: center;
+}
+
+.rounded-circle.img-fluid.card-img-top.w-100.d-block {
+  max-width: 30%;
+  display: block;
+  margin: auto;
+}
+

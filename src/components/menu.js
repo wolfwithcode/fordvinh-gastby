@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 // import 'bootstrap/dist/js/bootstrap.min.js'
 // import '../assets/js/jquery.min.js'
 // import '../assets/bootstrap/js/bootstrap.min.js'
