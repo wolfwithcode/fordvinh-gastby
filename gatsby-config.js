@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Crash Course`,
+    title: `Đại lý Ford Vinh`,
     description: `Move from wordpress to gastby js`,
     author: `@anhld`,
   },

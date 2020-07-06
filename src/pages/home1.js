@@ -68,7 +68,7 @@ const car_Images = [
   ];
 
   
-const HomePage = () => (
+const HomePage1 = () => (
   <Layout>
     <SEO title="Home page" />
     <section id="promo">
@@ -313,4 +313,4 @@ const HomePage = () => (
   </Layout>
 )
 
-export default HomePage
+export default HomePage1
