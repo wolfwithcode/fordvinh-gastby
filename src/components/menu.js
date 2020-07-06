@@ -1,30 +1,53 @@
 import React from "react"
 import { Link } from "gatsby"
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "bootstrap/dist/css/bootstrap.min.css"
 // import 'bootstrap/dist/js/bootstrap.min.js'
 // import '../assets/js/jquery.min.js'
 // import '../assets/bootstrap/js/bootstrap.min.js'
 import "../assets/fonts/font-awesome.min.css"
 import "../assets/css/styles.css"
-import $ from 'jquery'
+import {
+  Navbar,
+  NavDropdown,
+  FormControl,
+  Button,
+  Nav,
+  Form,
+  Container,
+} from "react-bootstrap"
+import $ from "jquery"
 const Menu = () => {
   return (
-    <div      
-    >
-      <nav class="navbar navbar-light navbar-expand-md text-center">
-        <div class="container-fluid"><a class="navbar-brand" href="#">Ford</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse text-center"
-                id="navcol-1">
-                <ul class="nav navbar-nav text-center flex-grow-1 justify-content-center">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Bảng báo giá&nbsp;<i class="fa fa-shopping-bag"></i></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Nhận báo giá&nbsp;<i class="fa fa-money"></i></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Đăng ký lái thử&nbsp;<i class="fa fa-car"></i></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Gọi điện ngay&nbsp;&nbsp;<i class="fa fa-phone"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>   
-    </div>
+    <Container>
+      <Navbar bg="dark" expand="lg" className="navbar navbar-dark navbar-expand-md bg-info text-center">
+        <Navbar.Brand href="#home">Ford</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="justify-content-center mx-auto">
+            <Nav.Link href="#home">Bảng báo giá</Nav.Link>
+            <Nav.Link href="#link">Nhận báo giá</Nav.Link>
+            <Nav.Link href="#link">Đăng ký lái thử</Nav.Link>
+            <Nav.Link href="#link">Gọi điện ngay</Nav.Link>
+
+            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">
+              Another action
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">
+              Separated link
+            </NavDropdown.Item>
+          </NavDropdown> */}
+          </Nav>
+          {/* <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-success">Search</Button>
+        </Form> */}
+        </Navbar.Collapse>
+      </Navbar>
+    </Container>
   )
 }
 
