@@ -7,99 +7,125 @@ import {
   Row,
   Col,
   Card,
-  Button,
+  // Button,
   ListGroup,
   Table,
   Carousel,
-  Image
+  // Image,
 } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../assets/css/styles.css"
 // import Image from 'react-bootstrap/Image'
 import avaterImg from "../images/le-thanh-xuan.png"
-import {useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-const listCars = [
-  {
-    title: "Ford Ranger",
-    offer:
-      "616 triệu - Ưu đãi đến 80 triệu . Trả trước 191 Triệu lấy xe ngay - Gọi ngay để có mức giá tốt nhất",
-    link:
-      "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
-  },
-  {
-    title: "Ford Raptor",
-    offer:
-      "1.198 triệu - Ưu đãi đến 30 triệu . Gọi ngay để có mức giá tốt nhất - Và nhiều ưu đãi khác",
-    link:
-      "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
-  },
-  {
-    title: "Ford Ecosport",
-    offer:
-      "545 triệu - Ưu đãi đến 48 triệu . Gọi ngay để có mức giá tốt nhất - Và nhiều ưu đãi khác",
-    link:
-      "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
-  },
-  {
-    title: "Ford Everest",
-    offer:
-      "999 triệu - Ưu đãi đến 70 triệu . Gọi ngay để có mức giá tốt nhất - Và nhiều ưu đãi khác",
-    link:
-      "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
-  },
-  {
-    title: "Ford Explorer",
-    offer:
-      "1.199 triệu - Ưu đãi đến 40 triệu . Gọi ngay để có mức giá tốt nhất - Và nhiều ưu đãi khác",
-    link:
-      "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
-  },
-  {
-    title: "Ford Transit",
-    offer:
-      "842 triệu - Ưu đãi đến 160 triệu. Gọi ngay để có mức giá tốt nhất - Và nhiều ưu đãi khác",
-    link:
-      "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
-  },
-]
 
-const car_Images = [
-    { id: 1, src: "src/images/le-thanh-xuan.png", title: 'xuan', description: 'xuan' },    
-  ];
-
-  
 const HomePage1 = () => {
-  const query = useStaticQuery( graphql`
-  query{
-    carousel: allFile(filter: {relativeDirectory: {eq: "ford-ranger/carousel"}}) {
-      nodes {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid_tracedSVG
+  const listCars = [
+    {
+      title: "Ford Ranger",
+      offer:
+        "616 triệu - Ưu đãi đến 80 triệu . Trả trước 191 Triệu lấy xe ngay - Gọi ngay để có mức giá tốt nhất",
+      link:
+        "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
+    },
+    {
+      title: "Ford Raptor",
+      offer:
+        "1.198 triệu - Ưu đãi đến 30 triệu . Gọi ngay để có mức giá tốt nhất - Và nhiều ưu đãi khác",
+      link:
+        "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
+    },
+    {
+      title: "Ford Ecosport",
+      offer:
+        "545 triệu - Ưu đãi đến 48 triệu . Gọi ngay để có mức giá tốt nhất - Và nhiều ưu đãi khác",
+      link:
+        "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
+    },
+    {
+      title: "Ford Everest",
+      offer:
+        "999 triệu - Ưu đãi đến 70 triệu . Gọi ngay để có mức giá tốt nhất - Và nhiều ưu đãi khác",
+      link:
+        "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
+    },
+    {
+      title: "Ford Explorer",
+      offer:
+        "1.199 triệu - Ưu đãi đến 40 triệu . Gọi ngay để có mức giá tốt nhất - Và nhiều ưu đãi khác",
+      link:
+        "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
+    },
+    {
+      title: "Ford Transit",
+      offer:
+        "842 triệu - Ưu đãi đến 160 triệu. Gọi ngay để có mức giá tốt nhất - Và nhiều ưu đãi khác",
+      link:
+        "https://dailyxe.com.vn/showroom/dai-ly-ford-vinh-nghe-an-148h.html#gia_xe_ford_transit",
+    },
+  ]
+
+  const listCarsPrice = [
+    {
+      title: "Ranger XLT Limited 2020",
+      price: "799,000,000",
+    },
+
+    {
+      title: "Ranger Wildtrak 2.0L Turbo AT 4X2",
+      price: "853,000,000",
+    },
+
+    {
+      title: "Ranger Wildtrak 2.0L Bi-Turbo AT 4X4",
+      price: "918,000,000",
+    },
+
+    {
+      title: "Ranger XL 2.2L",
+      price: "616,000,000",
+    },
+  ]
+
+  const query = useStaticQuery(graphql`
+    query {
+      carousel: allFile(
+        filter: { relativeDirectory: { eq: "ford-ranger/carousel" } }
+      ) {
+        nodes {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
           }
         }
       }
-    },
-    galary: allFile(filter: {relativeDirectory: {eq: "ford-ranger/galary"}}) {
-      nodes {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid_tracedSVG
+      galary: allFile(
+        filter: { relativeDirectory: { eq: "ford-ranger/galary" } }
+      ) {
+        nodes {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
           }
         }
       }
     }
-  }
-  `);
-  console.log('query carousel', query.carousel);
-  console.log('query galary', query.galary);
-  const CarouselItemSources = query.carousel.nodes.map(node => node.childImageSharp.fluid);
-  console.log('CarouselItemSource ', CarouselItemSources);
-  const GalaryItemSources = query.galary.nodes.map(node => node.childImageSharp.fluid);
-  console.log('GalaryItemSources ', GalaryItemSources);
- 
+  `)
+  console.log("query carousel", query.carousel)
+  console.log("query galary", query.galary)
+  const CarouselItemSources = query.carousel.nodes.map(
+    node => node.childImageSharp.fluid
+  )
+  console.log("CarouselItemSource ", CarouselItemSources)
+  const GalaryItemSources = query.galary.nodes.map(
+    node => node.childImageSharp.fluid
+  )
+  console.log("GalaryItemSources ", GalaryItemSources)
+
   return (
     <Layout>
       <SEO title="Home page" />
@@ -111,9 +137,9 @@ const HomePage1 = () => {
                 <h1>Giới thiệu</h1>
                 <p>
                   <strong>Công ty TNHH Vinh Ford</strong>&nbsp;(gọi tắt là Vinh
-                  Ford - VIF) là đại lý ủy quyền chính thức của Ford Việt Nam tại
-                  khu vực với đầy đủ các chức năng bán hàng, dịch vụ hậu mãi và
-                  kinh doanh phụ tùng chính hãng.&nbsp;
+                  Ford - VIF) là đại lý ủy quyền chính thức của Ford Việt Nam
+                  tại khu vực với đầy đủ các chức năng bán hàng, dịch vụ hậu mãi
+                  và kinh doanh phụ tùng chính hãng.&nbsp;
                   <strong>Đại lý Ford Vinh</strong>&nbsp;tọa lại tại Km
                   200,&nbsp;Đại lộ Lê Nin, Thành Phố Vinh, Tỉnh Nghệ An.
                 </p>
@@ -129,7 +155,8 @@ const HomePage1 = () => {
                 <Card.Body>
                   <Card.Title>Lê Thanh Xuân</Card.Title>
                   <Card.Text>
-                    Nhân viên kinh doanh -&nbsp;&nbsp;<i class="fa fa-phone"></i>
+                    Nhân viên kinh doanh -&nbsp;&nbsp;
+                    <i className="fa fa-phone"></i>
                     <strong>0977 857 315</strong>
                   </Card.Text>
                   {/* <Button variant="primary">Go somewhere</Button> */}
@@ -153,14 +180,14 @@ const HomePage1 = () => {
             </h4>
             <p>
               <em>
-                Hãy Để Ford Nghệ An Báo Giá Lăn Bánh Tốt Nhất Cho Chiếc Xe Mơ Ước
-                Của Bạn
+                Hãy Để Ford Nghệ An Báo Giá Lăn Bánh Tốt Nhất Cho Chiếc Xe Mơ
+                Ước Của Bạn
               </em>
             </p>
             <ListGroup>
-              {listCars.map(car => (
-                <ListGroup.Item>
-                  <i class="fa fa-dot-circle-o"></i>
+              {listCars.map((car, i) => (
+                <ListGroup.Item key={i}>
+                  <i className="fa fa-dot-circle-o"></i>
                   <span>
                     {" "}
                     {car.title} &nbsp; {car.offer}
@@ -169,8 +196,8 @@ const HomePage1 = () => {
               ))}
             </ListGroup>
             <ListGroup>
-              {listCars.map(car => (
-                <ListGroup.Item>
+              {listCars.map((car, i) => (
+                <ListGroup.Item key={i}>
                   <span>
                     <strong>Click ngay để xem chi tiết:&nbsp;</strong>
                     <a href={car.link}>{car.title} 2020</a>
@@ -182,8 +209,8 @@ const HomePage1 = () => {
             <Row>
               <Col md={6}>
                 <div id="uudai1">
-                  <p class="border-dotted">
-                    <i class="fa fa-star"></i>&nbsp; &nbsp;
+                  <p className="border-dotted">
+                    <i className="fa fa-star"></i>&nbsp; &nbsp;
                     <span style={{ textdecoration: "underline" }}>
                       Liên Hệ:&nbsp;
                     </span>
@@ -200,9 +227,9 @@ const HomePage1 = () => {
               <Col md={6}>
                 <div id="uudai1">
                   <p>
-                    <i class="fa fa-star"></i>&nbsp; &nbsp;Quà tặng: Ưu đãi giá xe
-                    Giảm Giá Tiền Mặt Trực Tiếp&nbsp;Tặng Bảo Hiểm Thân Vỏ và
-                    nhiều ưu đãi khác
+                    <i className="fa fa-star"></i>&nbsp; &nbsp;Quà tặng: Ưu đãi
+                    giá xe Giảm Giá Tiền Mặt Trực Tiếp&nbsp;Tặng Bảo Hiểm Thân
+                    Vỏ và nhiều ưu đãi khác
                   </p>
                 </div>
               </Col>
@@ -228,15 +255,15 @@ const HomePage1 = () => {
               <br />
             </p>
           </Jumbotron>
-          <div class="container" id="uudai-ford-ranger">
+          <div className="container" id="uudai-ford-ranger">
             <div id="uudai-ford-ranger-chitiet">
-              <p class="border-dotted">
-                <i class="fa fa-star"></i>&nbsp; &nbsp;Gặp mặt hoặc gọi đến
-                số&nbsp;<strong>0977 857 315</strong>&nbsp;để nhận chiết khấu tiền
-                mặt hấp dẫn dành riêng cho Quý Khách -&nbsp;Giá trên là giá niêm
-                yết. Để nhận thêm khuyến mãi Quý khách vui lòng gọi Xuân để nhận
-                được ưu đãi nhiều nhất, xe có sẵn giao ngay, bốc biển số đẹp, hỗ
-                trợ giao xe tận nhà,..
+              <p className="border-dotted">
+                <i className="fa fa-star"></i>&nbsp; &nbsp;Gặp mặt hoặc gọi đến
+                số&nbsp;<strong>0977 857 315</strong>&nbsp;để nhận chiết khấu
+                tiền mặt hấp dẫn dành riêng cho Quý Khách -&nbsp;Giá trên là giá
+                niêm yết. Để nhận thêm khuyến mãi Quý khách vui lòng gọi Xuân để
+                nhận được ưu đãi nhiều nhất, xe có sẵn giao ngay, bốc biển số
+                đẹp, hỗ trợ giao xe tận nhà,..
               </p>
             </div>
           </div>
@@ -248,52 +275,45 @@ const HomePage1 = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Ranger XLT Limited 2020</td>
-                <td>799,000,000</td>
-              </tr>
-              <tr>
-                <td>Ranger Wildtrak 2.0L Turbo AT 4X2</td>
-                <td>853,000,000</td>
-              </tr>
-              <tr>
-                <td>Ranger Wildtrak 2.0L Bi-Turbo AT 4X4</td>
-                <td>918,000,000</td>
-              </tr>
-              <tr>
-                <td>Ranger XL 2.2L</td>
-                <td>616,000,000</td>
-              </tr>
+              {listCarsPrice.map(car => (
+                <tr>
+                  <td>{car.title}</td>
+                  <td>{car.price}</td>
+                </tr>
+              ))}
             </tbody>
           </Table>
           <Carousel>
-            {CarouselItemSources.map(CarouselItem => (
-              <Carousel.Item>
-              <Img
-                className="d-block w-100"
-                // src={require("../assets/img/ford-ranger-2018-mau-den-49006j.jpg")}
-                fluid={CarouselItem}
-                alt="First slide"
-              />
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
+            {CarouselItemSources.map((CarouselItem, i) => (
+              <Carousel.Item key={i}>
+                <Img
+                  className="d-block w-100"
+                  fluid={CarouselItem}
+                  alt="First slide"
+                />
+                <Carousel.Caption>
+                  <h3>First slide label</h3>
+                  <p>
+                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
             ))}
-            
           </Carousel>
           <Container>
-              <h1>Hình ảnh</h1>
-              <Row>
-                {GalaryItemSources.map(GalaryItem => (
-                    <Col md={4}>
-                    <Card>
-                        <Img class="card-img-top w-100 d-block" fluid={GalaryItem} />
-                    </Card>
+            <h1>Hình ảnh</h1>
+            <Row>
+              {GalaryItemSources.map((GalaryItem, i) => (
+                <Col md={4} key={i}>
+                  <Card>
+                    <Img
+                      className="card-img-top w-100 d-block"
+                      fluid={GalaryItem}
+                    />
+                  </Card>
                 </Col>
-                ))}                  
-              </Row>
+              ))}
+            </Row>
           </Container>
         </Container>
       </section>
