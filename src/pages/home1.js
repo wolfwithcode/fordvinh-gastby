@@ -1,4 +1,5 @@
 import React from "react"
+import Banner from "../components/banner"
 // import {Link} from 'gatsby'
 // const images = require.context('../../public/images', true);
 import {
@@ -129,43 +130,7 @@ const HomePage1 = () => {
   return (
     <Layout>
       <SEO title="Home page" />
-      <section id="promo">
-        <Container>
-          <Row>
-            <Col md={6} className="justify-content-center">
-              <Jumbotron>
-                <h1>Giới thiệu</h1>
-                <p>
-                  <strong>Công ty TNHH Vinh Ford</strong>&nbsp;(gọi tắt là Vinh
-                  Ford - VIF) là đại lý ủy quyền chính thức của Ford Việt Nam
-                  tại khu vực với đầy đủ các chức năng bán hàng, dịch vụ hậu mãi
-                  và kinh doanh phụ tùng chính hãng.&nbsp;
-                  <strong>Đại lý Ford Vinh</strong>&nbsp;tọa lại tại Km
-                  200,&nbsp;Đại lộ Lê Nin, Thành Phố Vinh, Tỉnh Nghệ An.
-                </p>
-              </Jumbotron>
-            </Col>
-            <Col md={6}>
-              <Card className="justify-content-center">
-                <Card.Img
-                  variant="top"
-                  src={avaterImg}
-                  className="rounded-circle img-fluid card-img-top w-100 d-block d-xl-flex justify-content-center align-items-center align-content-center"
-                />
-                <Card.Body>
-                  <Card.Title>Lê Thanh Xuân</Card.Title>
-                  <Card.Text>
-                    Nhân viên kinh doanh -&nbsp;&nbsp;
-                    <i className="fa fa-phone"></i>
-                    <strong>0977 857 315</strong>
-                  </Card.Text>
-                  {/* <Button variant="primary">Go somewhere</Button> */}
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <Banner />      
       <section id="baogiatonghop">
         <Container>
           <Jumbotron>

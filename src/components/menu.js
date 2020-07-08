@@ -19,7 +19,7 @@ import $ from "jquery"
 const Menu = () => {
   return (
     <Container>
-      <Navbar bg="dark" expand="lg" className="navbar navbar-dark navbar-expand-md bg-info text-center">
+      <Navbar bg="blue" expand="lg" className="navbar navbar-dark navbar-expand-md bg-info text-center">
         <Navbar.Brand href="#home">Ford</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
