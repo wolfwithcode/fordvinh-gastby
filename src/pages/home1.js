@@ -240,8 +240,8 @@ const HomePage1 = () => {
               </tr>
             </thead>
             <tbody>
-              {listCarsPrice.map(car => (
-                <tr>
+              {listCarsPrice.map((car, i) => (
+                <tr key={i}>
                   <td>{car.title}</td>
                   <td>{car.price}</td>
                 </tr>
