@@ -1,0 +1,29 @@
+body {
+  background: black;
+  color: white;
+}
+
+#hero {
+  background-image: url("../../assets/img/hero.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.navbar-light .navbar-brand {
+  background-image: url("../../assets/img/ford-vector-logo.svg");
+  width: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+}
+
+#navcol-1 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+  color: #222222;
+}
