@@ -1,0 +1,55 @@
+.promo {
+  text-align: center;
+  /*padding: 40px;*/
+  /* background: url(../../assets/img/back.jpg) no-repeat; */
+  background-size: cover;
+}
+
+.promo__jumbotron {
+  border-radius: 40px;
+  background-color: rgba(255,255,255,0.75);
+  /*border-style: dotted;*/
+}
+
+.bao_gia_tong_hop {
+  text-align: center;
+  /*padding: 40px;*/
+  border-radius: 30px;
+}
+
+.bao_gia_tong_hop__jumbotron {
+  border-style: dotted;
+}
+
+.bao_gia_tong_hop__list_group {
+  text-align: left;
+  /*padding: 10px;*/
+}
+
+.icon {
+  padding-right: 20px;
+}
+
+.uudai1 {
+  text-align: left;
+  /*border-radius: 1em 0 0 1em;*/
+  background: #73AD21;
+}
+
+.uudai2 {
+  text-align: left;
+  /*border-radius: 1em 0 0 1em;*/
+  background: #73AD21;
+}
+
+.bao_gia_ford_ranger {
+  text-align: center;
+}
+
+/* d-block {
+  max-width: 30%;
+  display: block;
+  margin: auto;
+} */
+
+    
