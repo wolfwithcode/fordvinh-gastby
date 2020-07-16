@@ -3,7 +3,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Container, Row, Col, Carousel } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCar, faCogs, faGasPump } from "@fortawesome/free-solid-svg-icons"
+import {
+  faCar,
+  faCogs,
+  faGasPump,
+  faSearch,
+  faDollarSign,
+} from "@fortawesome/free-solid-svg-icons"
 import HomeStyle from "../styles/home.module.css"
 
 import img1 from "../images/ford-ranger/galary/ford-ranger-2018-mau-den-49006j.jpg"
@@ -67,14 +73,80 @@ function CarInfoTemplate() {
     </Col>
   )
 }
+
+function QuestionTextTemplate(question) {
+  console.log("question ", question);
+  // const titleText = "Bạn Đang Tìm Kiếm Một Chiếc Xe?"
+  // const questionInfoText =
+  //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus!"
+  // const questionColumClasses = [
+  //   "col-10 mx-auto my-2 col-md-6 d-flex justify-content-between p-4",
+  //   HomeStyle.questionGrey,
+  // ].join(" ")
+  // const questionIconClasses = [HomeStyle.questionIcon, "mr-3"].join(" ")
+  // const questionInfo = HomeStyle.questionInfo
+  // const icon = faSearch
+  const titleText = question.titleText;
+  const questionInfoText = question.questionInfoText;    
+  const questionColumClasses = [
+    "col-10 mx-auto my-2 col-md-6 d-flex justify-content-between p-4",
+    question.iconColor,
+  ].join(" ")
+  const questionIconClasses = [HomeStyle.questionIcon, "mr-3"].join(" ")
+  const questionInfo = HomeStyle.questionInfo
+  const icon = question.icon;
+  return (
+    <Col className={questionColumClasses}>
+      <a className={questionIconClasses} style={{ color: "blue" }}>
+        <FontAwesomeIcon icon={icon} />
+      </a>
+      <div className="question-text w-75">
+        <h4 className="question-title text-capitalize font-weight-bold">
+          {titleText}
+        </h4>
+        <p className={questionInfo}>{questionInfoText}</p>
+      </div>
+    </Col>
+  )
+}
 export default function HomePage() {
-  const times = 6
+  const questionClasses = [HomeStyle.question, "py-5"].join(" ")
+  const questionList = [
+    {
+      titleText: "Bạn Đang Tìm Kiếm Một Chiếc Xe?",
+      questionInfoText:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus!",
+      icon: faSearch,
+      iconColor: HomeStyle.questionGrey,
+    },
+    {
+      titleText: "Bạn muốn mua trả góp?",
+      questionInfoText:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus!",
+      icon: faDollarSign,
+      iconColor: HomeStyle.questionYellow,
+    },
+  ]
   return (
     <Layout>
       <SEO title="Home page"></SEO>
       <Container>
         <Row>{[...Array(9)].map((x, i) => CarInfoTemplate())}</Row>
       </Container>
+      <section className={questionClasses}>
+        <Row>
+          {/* <Col className="col-10 mx-auto my-2 col-md-6 d-flex justify-content-between question-grey p-4">
+            <a className="question-icon mr-3">
+              <FontAwesomeIcon icon={faSearch}/>
+            </a>
+            <div className="question-text w-75">
+              <h4 className="question-title text-capitalize font-weight-bold">Bạn Đang Tìm Kiếm Một Chiếc Xe?</h4>
+              <p className="question-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, repellendus!</p>
+            </div>
+          </Col>         */}
+          {questionList.map((question, i) => QuestionTextTemplate(question))}
+        </Row>
+      </section>
     </Layout>
   )
 }

@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap"
 
 
-import HeroImage from "../assets/img/hero.jpg"
+import HeroImage from "../images/ford-ranger.jpeg"
 import FordLogo from "../assets/img/ford-vector-logo.svg"
 
 // const heroStyle = {
@@ -49,10 +49,10 @@ const Menu = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className={style.navColStyle}>
           <Nav className={`justify-content-center mx-auto ${style.navLinkStyle}`} >
-            <Nav.Link href="#home" >Bảng báo giá</Nav.Link>
-            <Nav.Link href="#link">Nhận báo giá</Nav.Link>
-            <Nav.Link href="#link">Đăng ký lái thử</Nav.Link>
-            <Nav.Link href="#link">Gọi điện ngay</Nav.Link>
+            <Nav.Link href="#home" style={{color:"black"}} >Bảng báo giá</Nav.Link>
+            <Nav.Link href="#link" style={{color:"black"}} >Nhận báo giá</Nav.Link>
+            <Nav.Link href="#link" style={{color:"black"}} >Đăng ký lái thử</Nav.Link>
+            <Nav.Link href="#link" style={{color:"black"}} >Gọi điện ngay</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

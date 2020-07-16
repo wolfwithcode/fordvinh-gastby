@@ -1,5 +1,5 @@
 .hero {
-  background-image: url(../assets/img/hero.jpg);
+  background-image: url(../images/ford-ranger.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -19,5 +19,5 @@
   text-transform: uppercase;
 }
 .navLinkStyle {
-  color: #222;
+  color: black;
 }
