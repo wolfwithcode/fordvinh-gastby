@@ -63,6 +63,7 @@ function CarInfoTemplate(car, i) {
   const priceCar = car.priceCar
   const fuelTankCapacity = car.fuelTankCapacity
   const bodyStyle = car.bodyStyle
+  const seat = car.seat
   const transmission = car.transmission
   const modelList = car.modelList
   
@@ -93,7 +94,7 @@ function CarInfoTemplate(car, i) {
         <div className="card-footer text-capitalize d-flex justify-content-between">
           <p>
             <FontAwesomeIcon icon={faCar} />
-            {bodyStyle}
+            {seat}
           </p>
           <p>
             <FontAwesomeIcon icon={faCogs} />
@@ -168,6 +169,7 @@ export default function HomePage() {
       priceCar: "545,000,000",
       fuelTankCapacity: "60l",
       bodyStyle: "Sedan",
+      seat:"5 ghế",
       transmission: "Auto",
       modelList: [
         {
@@ -203,6 +205,7 @@ export default function HomePage() {
       priceCar: "999,000,000",
       fuelTankCapacity: "100l",
       bodyStyle: "Sedan",
+      seat:"7 ghế",
       transmission: "Auto",
       modelList: [
         {
@@ -238,6 +241,7 @@ export default function HomePage() {
       priceCar: "1,999,000,000",
       fuelTankCapacity: "90l",
       bodyStyle: "Sedan",
+      seat:"7 ghế",
       transmission: "Auto",
       modelList: [
         {
@@ -253,6 +257,7 @@ export default function HomePage() {
       priceCar: "999,000,000",
       fuelTankCapacity: "90l",
       bodyStyle: "Sedan",
+      seat:"7 ghế",
       transmission: "Auto",
       modelList: [
         {
@@ -273,6 +278,7 @@ export default function HomePage() {
       priceCar: "872,000,000",
       fuelTankCapacity: "90l",
       bodyStyle: "Sedan",
+      seat:"16 ghế",
       transmission: "Auto",
       modelList: [
         {
@@ -298,6 +304,7 @@ export default function HomePage() {
       priceCar: "616,000,000",
       fuelTankCapacity: "90l",
       bodyStyle: "Sedan",
+      seat:"5 ghế",
       transmission: "Auto",
       modelList: [
         {
