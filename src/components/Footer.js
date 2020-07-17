@@ -36,7 +36,7 @@ export default function Footer() {
               </p>
             </div>
           </Col>
-          <Col className={questionColumClasses}>
+          <Col className={questionColumClasses} id="contact">
             <div className="question-text w-75">
               <h4 className="question-title text-capitalize font-weight-bold">
                 {"Thông tin  liên hệ"}
@@ -59,18 +59,7 @@ export default function Footer() {
                   {"   Hotline: 0977 857 315"}
                 </p>
               </div>
-              {/* <div >
-                
-                <hr/>
-                <p>
-                  <FontAwesomeIcon icon={faCogs} />
-                  Tự động
-                </p>
-                <p>
-                  <FontAwesomeIcon icon={faGasPump} />
-                  60l
-                </p>
-              </div> */}
+              
             </div>
           </Col>
         </Row>

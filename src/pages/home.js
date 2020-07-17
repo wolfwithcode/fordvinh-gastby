@@ -46,6 +46,7 @@ import imgTransit3 from "../images/ford-transit-3.jpeg"
 import imgTourneo1 from "../images/ford-tourneo-1.jpg"
 import imgTourneo2 from "../images/ford-tourneo-2.jpg"
 import imgTourneo3 from "../images/ford-tourneo-3.jpg"
+
 function CarInfoTemplate(car, i) {
   const cardClasses = ["card", HomeStyle.carCard].join(" ")
   const imgClasses = ["d-block", "w-100", HomeStyle.carImg].join(" ")
@@ -57,14 +58,6 @@ function CarInfoTemplate(car, i) {
   ].join(" ")
   const cardBodyClasses = ["card-body", HomeStyle.cardBody].join(" ")
   /////////////data binding//////////////////////
-  // console.log("car i ", car, i)
-  // const imgageList = [img1, img2, img3];
-  // const nameCar = "Ecosport";
-  // const priceCar = "10,000";
-  // const fuelTankCapacity = "60l";
-  // const bodyStyle = "Sedan";
-  // const transmission = "Auto";
-
   const imgageList = car.imgageList
   const nameCar = car.nameCar
   const priceCar = car.priceCar
@@ -72,33 +65,7 @@ function CarInfoTemplate(car, i) {
   const bodyStyle = car.bodyStyle
   const transmission = car.transmission
   const modelList = car.modelList
-  // const modelList = [
-  //   {
-  //     modelName: "Ecosport 1.5 MT AMB",
-  //     engine: "1.5L Xăng",
-  //     price: "545.000.000",
-  //   },
-  //   {
-  //     modelName: "Ecosport 1.5 AT AMB",
-  //     engine: "1.5L Xăng",
-  //     price: "569.000.000",
-  //   },
-  //   {
-  //     modelName: "Ecosport 1.5 AT TREND",
-  //     engine: "1.5L Xăng",
-  //     price: "593.000.000",
-  //   },
-  //   {
-  //     modelName: "Ecosport 1.5 AT TITA",
-  //     engine: "1.5L Xăng",
-  //     price: "648.000.000",
-  //   },
-  //   {
-  //     modelName: "Ecosport 1.0 AT TITA",
-  //     engine: "1.5L Ecoboost",
-  //     price: "689.000.000",
-  //   },
-  // ];
+  
   return (
     <Col className="col-12 col-md-6 col-lg-6 mx-auto my-3" key={i}>
       {/* <div className="card car-card"> */}
@@ -396,7 +363,7 @@ export default function HomePage() {
   return (
     <Layout>
       <SEO title="Home page"></SEO>
-      <Container>
+      <Container id="priceTable">
         <Row className="mb-5 mt-5">
           <Col className="d-flex flex-wrap text-uppercase justify-content-center">
             <h1 className="font-weight-bold align-self-center mx-1">
