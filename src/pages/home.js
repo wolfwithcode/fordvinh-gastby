@@ -65,13 +65,13 @@ function CarInfoTemplate(car, i) {
   // const bodyStyle = "Sedan";
   // const transmission = "Auto";
 
-  const imgageList = car.imgageList;
-  const nameCar = car.nameCar;
-  const priceCar = car.priceCar;
-  const fuelTankCapacity = car.fuelTankCapacity;
-  const bodyStyle = car.bodyStyle;
-  const transmission = car.transmission;
-  const modelList = car.modelList;
+  const imgageList = car.imgageList
+  const nameCar = car.nameCar
+  const priceCar = car.priceCar
+  const fuelTankCapacity = car.fuelTankCapacity
+  const bodyStyle = car.bodyStyle
+  const transmission = car.transmission
+  const modelList = car.modelList
   // const modelList = [
   //   {
   //     modelName: "Ecosport 1.5 MT AMB",
@@ -153,7 +153,6 @@ function CarInfoTemplate(car, i) {
                 <td>{model.price}</td>
               </tr>
             ))}
-            
           </tbody>
         </Table>
       </div>
@@ -264,7 +263,7 @@ export default function HomePage() {
           engine: "2.0 bi-turbo",
           price: "1.399.000.000",
         },
-      ]
+      ],
     },
     {
       imgageList: [imgExplorer1, imgExplorer2, imgExplorer3],
@@ -279,7 +278,7 @@ export default function HomePage() {
           engine: "2.3L Xăng",
           price: "1.999.000.000",
         },
-      ]
+      ],
     },
     {
       imgageList: [imgTourneo1, imgTourneo2, imgTourneo3],
@@ -299,7 +298,7 @@ export default function HomePage() {
           engine: "2.0L Xăng",
           price: "999.000.000",
         },
-      ]
+      ],
     },
     {
       imgageList: [imgTransit1, imgTransit2, imgTransit3],
@@ -324,7 +323,7 @@ export default function HomePage() {
           engine: "2.4L Dầu",
           price: "919.000.000",
         },
-      ]
+      ],
     },
     {
       imgageList: [imgRanger1, imgRanger2, imgRanger3],
@@ -374,10 +373,8 @@ export default function HomePage() {
           engine: "2.0L Dầu",
           price: "1.198.000.000",
         },
-      ]
+      ],
     },
-    
-    
   ]
   const questionClasses = [HomeStyle.question, "py-5"].join(" ")
   const questionList = [
@@ -400,6 +397,13 @@ export default function HomePage() {
     <Layout>
       <SEO title="Home page"></SEO>
       <Container>
+        <Row className="mb-5 mt-5">
+          <Col className="d-flex flex-wrap text-uppercase justify-content-center">
+            <h1 className="font-weight-bold align-self-center mx-1">
+              {"Bản báo giá"}
+            </h1>
+          </Col>
+        </Row>
         <Row>{carList.map((car, i) => CarInfoTemplate(car, i))}</Row>
       </Container>
       <section className={questionClasses}>
