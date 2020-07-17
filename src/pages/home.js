@@ -400,7 +400,7 @@ export default function HomePage() {
         <Row className="mb-5 mt-5">
           <Col className="d-flex flex-wrap text-uppercase justify-content-center">
             <h1 className="font-weight-bold align-self-center mx-1">
-              {"Bản báo giá"}
+              {"Bảng báo giá"}
             </h1>
           </Col>
         </Row>
