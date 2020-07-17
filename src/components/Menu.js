@@ -15,31 +15,7 @@ import {
 import HeroImage from "../images/ford-ranger.jpeg"
 import FordLogo from "../assets/img/ford-vector-logo.svg"
 
-// const heroStyle = {
-//   backgroundImage: `url(${HeroImage})`,
-//   backgroundPosition: "center",
-//   backgroundSize: "cover",
-//   backgroundRepeat: "no-repeat",
-//   width: "100%",
-//   height: "100vh",
-// };
 
-// const navbarBrandStyle = {
-//   backgroundImage: `url(${FordLogo})`,
-//   width: "200px",
-//   backgroundRepeat: "no-repeat",
-//   backgroundPosition: "center",
-//   height: "80px",
-// }
-
-// const navColStyle = {
-//   fontSize: "13px",
-//   fontWeight: "600",
-//   textTransform: "uppercase",
-// }
-// const navLinkStyle = {
-//   color: "rgb(34,34,34)"
-// }
 const Menu = () => {
 
   return (
@@ -59,27 +35,6 @@ const Menu = () => {
     </section>
   )
   
-
-  // return (
-  //   <section id="hero" style={mystyle}>
-  //       <nav class="navbar navbar-light navbar-expand-md">
-  //           <div class="container-fluid"><a class="navbar-brand" href="#"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-  //               <div class="collapse navbar-collapse"
-  //                   id="navcol-1">
-  //                   <ul class="nav navbar-nav mx-auto">
-  //                       <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Ford Ranger</a></li>
-  //                       <li class="nav-item" role="presentation"><a class="nav-link" href="#">Ford Eco</a></li>
-  //                       <li class="nav-item" role="presentation"><a class="nav-link" href="#">Ford X</a></li>
-  //                   </ul>
-  //                   <ul class="nav navbar-nav">
-  //                       <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Shop</a></li>
-  //                       <li class="nav-item" role="presentation"><a class="nav-link" href="#">Sign In</a></li>
-  //                   </ul>
-  //               </div>
-  //           </div>
-  //       </nav>
-  //   </section>
-  // )
 }
 
 export default Menu
