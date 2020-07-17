@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Container, Row, Col, Carousel } from "react-bootstrap"
+import { Container, Row, Col, Carousel, Table } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faCar,
@@ -23,11 +23,11 @@ import imgEcosport4 from "../images/ford-eco-sport-4.jpeg"
 import imgEcosport5 from "../images/ford-eco-sport-5.jpeg"
 import imgEcosport6 from "../images/ford-eco-sport-6.jpeg"
 import imgEcosport7 from "../images/ford-eco-sport-7.jpeg"
-////ford everest 
+////ford everest
 import imgEverest1 from "../images/ford-everest-1.jpeg"
 import imgEverest2 from "../images/ford-everest-2.jpeg"
 import imgEverest3 from "../images/ford-everest-3.jpeg"
-////ford explorer 
+////ford explorer
 import imgExplorer1 from "../images/ford-explorer-1.jpeg"
 import imgExplorer2 from "../images/ford-explorer-2.jpeg"
 import imgExplorer3 from "../images/ford-explorer-3.jpeg"
@@ -35,15 +35,17 @@ import imgExplorer3 from "../images/ford-explorer-3.jpeg"
 import imgRanger1 from "../images/ford-ranger-1.jpeg"
 import imgRanger2 from "../images/ford-ranger-2.jpeg"
 import imgRanger3 from "../images/ford-ranger-3.jpeg"
-////ford raptor
-import imgRaptor1 from "../images/ford-raptor-1.jpeg"
-import imgRaptor2 from "../images/ford-raptor-2.jpeg"
+// ////ford raptor
+// import imgRaptor1 from "../images/ford-raptor-1.jpeg"
+// import imgRaptor2 from "../images/ford-raptor-2.jpeg"
 ////ford transit
 import imgTransit1 from "../images/ford-transit-1.jpeg"
 import imgTransit2 from "../images/ford-transit-2.jpeg"
 import imgTransit3 from "../images/ford-transit-3.jpeg"
-
-
+////ford tourneo
+import imgTourneo1 from "../images/ford-tourneo-1.jpg"
+import imgTourneo2 from "../images/ford-tourneo-2.jpg"
+import imgTourneo3 from "../images/ford-tourneo-3.jpg"
 function CarInfoTemplate(car, i) {
   const cardClasses = ["card", HomeStyle.carCard].join(" ")
   const imgClasses = ["d-block", "w-100", HomeStyle.carImg].join(" ")
@@ -69,9 +71,36 @@ function CarInfoTemplate(car, i) {
   const fuelTankCapacity = car.fuelTankCapacity;
   const bodyStyle = car.bodyStyle;
   const transmission = car.transmission;
-  
+  const modelList = car.modelList;
+  // const modelList = [
+  //   {
+  //     modelName: "Ecosport 1.5 MT AMB",
+  //     engine: "1.5L Xăng",
+  //     price: "545.000.000",
+  //   },
+  //   {
+  //     modelName: "Ecosport 1.5 AT AMB",
+  //     engine: "1.5L Xăng",
+  //     price: "569.000.000",
+  //   },
+  //   {
+  //     modelName: "Ecosport 1.5 AT TREND",
+  //     engine: "1.5L Xăng",
+  //     price: "593.000.000",
+  //   },
+  //   {
+  //     modelName: "Ecosport 1.5 AT TITA",
+  //     engine: "1.5L Xăng",
+  //     price: "648.000.000",
+  //   },
+  //   {
+  //     modelName: "Ecosport 1.0 AT TITA",
+  //     engine: "1.5L Ecoboost",
+  //     price: "689.000.000",
+  //   },
+  // ];
   return (
-    <Col className="col-10 col-md-6 col-lg-4 mx-auto my-3" key={i}>
+    <Col className="col-12 col-md-6 col-lg-6 mx-auto my-3" key={i}>
       {/* <div className="card car-card"> */}
       <div className={cardClasses}>
         <Carousel>
@@ -108,6 +137,25 @@ function CarInfoTemplate(car, i) {
             {fuelTankCapacity}
           </p>
         </div>
+        <Table striped bordered hover style={{ fontSize: "smaller" }}>
+          <thead>
+            <tr>
+              <th style={{ color: "red" }}>Phiên bản</th>
+              <th style={{ color: "red" }}>Động cơ</th>
+              <th style={{ color: "red" }}>Giá (VAT)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {modelList.map((model, i) => (
+              <tr key={i}>
+                <td>{model.modelName}</td>
+                <td>{model.engine}</td>
+                <td>{model.price}</td>
+              </tr>
+            ))}
+            
+          </tbody>
+        </Table>
       </div>
     </Col>
   )
@@ -141,20 +189,82 @@ function QuestionTextTemplate(question) {
 export default function HomePage() {
   const carList = [
     {
-      imgageList: [imgEcosport1, imgEcosport2, imgEcosport3, imgEcosport4, imgEcosport5, imgEcosport6, imgEcosport7],
+      imgageList: [
+        imgEcosport1,
+        imgEcosport2,
+        imgEcosport3,
+        imgEcosport4,
+        imgEcosport5,
+        imgEcosport6,
+        imgEcosport7,
+      ],
       nameCar: "Ecosport",
       priceCar: "545,000,000",
       fuelTankCapacity: "60l",
       bodyStyle: "Sedan",
       transmission: "Auto",
+      modelList: [
+        {
+          modelName: "Ecosport 1.5 MT AMB",
+          engine: "1.5L Xăng",
+          price: "545.000.000",
+        },
+        {
+          modelName: "Ecosport 1.5 AT AMB",
+          engine: "1.5L Xăng",
+          price: "569.000.000",
+        },
+        {
+          modelName: "Ecosport 1.5 AT TREND",
+          engine: "1.5L Xăng",
+          price: "593.000.000",
+        },
+        {
+          modelName: "Ecosport 1.5 AT TITA",
+          engine: "1.5L Xăng",
+          price: "648.000.000",
+        },
+        {
+          modelName: "Ecosport 1.0 AT TITA",
+          engine: "1.5L Ecoboost",
+          price: "689.000.000",
+        },
+      ],
     },
     {
       imgageList: [imgEverest1, imgEverest2, imgEverest3],
       nameCar: "Everest",
-      priceCar: "900,000,000",
+      priceCar: "999,000,000",
       fuelTankCapacity: "100l",
       bodyStyle: "Sedan",
       transmission: "Auto",
+      modelList: [
+        {
+          modelName: "Everest 4X2 Abm MT",
+          engine: "2.0 turbo",
+          price: "999.000.000",
+        },
+        {
+          modelName: "Everest 4X2 Abm AT",
+          engine: "2.0 turbo",
+          price: "1.052.000.000",
+        },
+        {
+          modelName: "Everest 4X2 TREND",
+          engine: "2.0 turbo",
+          price: "1.112.000.000",
+        },
+        {
+          modelName: "Everest 4X2 Titanium",
+          engine: "2.0 turbo",
+          price: "1.181.000.000",
+        },
+        {
+          modelName: "Everest 4X4 Titanium",
+          engine: "2.0 bi-turbo",
+          price: "1.399.000.000",
+        },
+      ]
     },
     {
       imgageList: [imgExplorer1, imgExplorer2, imgExplorer3],
@@ -163,6 +273,58 @@ export default function HomePage() {
       fuelTankCapacity: "90l",
       bodyStyle: "Sedan",
       transmission: "Auto",
+      modelList: [
+        {
+          modelName: "Explorer Ecoboost",
+          engine: "2.3L Xăng",
+          price: "1.999.000.000",
+        },
+      ]
+    },
+    {
+      imgageList: [imgTourneo1, imgTourneo2, imgTourneo3],
+      nameCar: "Tourneo",
+      priceCar: "999,000,000",
+      fuelTankCapacity: "90l",
+      bodyStyle: "Sedan",
+      transmission: "Auto",
+      modelList: [
+        {
+          modelName: "Tourneo Titanium",
+          engine: "2.0L Xăng",
+          price: "1.069.000.000",
+        },
+        {
+          modelName: "Tourneo Trend",
+          engine: "2.0L Xăng",
+          price: "999.000.000",
+        },
+      ]
+    },
+    {
+      imgageList: [imgTransit1, imgTransit2, imgTransit3],
+      nameCar: "Transit",
+      priceCar: "872,000,000",
+      fuelTankCapacity: "90l",
+      bodyStyle: "Sedan",
+      transmission: "Auto",
+      modelList: [
+        {
+          modelName: "Transit Tiêu chuẩn",
+          engine: "2.4L Dầu",
+          price: "872.000.000",
+        },
+        {
+          modelName: "Transit SVP",
+          engine: "2.4L Dầu",
+          price: "879.000.000",
+        },
+        {
+          modelName: "Transit Cao cấp",
+          engine: "2.4L Dầu",
+          price: "919.000.000",
+        },
+      ]
     },
     {
       imgageList: [imgRanger1, imgRanger2, imgRanger3],
@@ -171,23 +333,51 @@ export default function HomePage() {
       fuelTankCapacity: "90l",
       bodyStyle: "Sedan",
       transmission: "Auto",
+      modelList: [
+        {
+          modelName: "Ranger 4X4 XL",
+          engine: "2.2L Dầu",
+          price: "616.000.000",
+        },
+        {
+          modelName: "Ranger 4X2 XLS MT",
+          engine: "2.2L Dầu",
+          price: "630.000.000",
+        },
+        {
+          modelName: "Ranger 4X2 XLS AT",
+          engine: "2.2L Dầu",
+          price: "650.000.000",
+        },
+        {
+          modelName: "Ranger 4X4 XLT MT",
+          engine: "2.2L Dầu",
+          price: "754.000.000",
+        },
+        {
+          modelName: "Ranger 4X4 XLT AT",
+          engine: "2.2L Dầu",
+          price: "779.000.000",
+        },
+        {
+          modelName: "Ranger WILDTRACK 4X2",
+          engine: "2.0L Dầu",
+          price: "853.000.000",
+        },
+        {
+          modelName: "Ranger WILDTRACK 4X4",
+          engine: "2.0L Dầu",
+          price: "918.000.000",
+        },
+        {
+          modelName: "Ranger RAPTOR",
+          engine: "2.0L Dầu",
+          price: "1.198.000.000",
+        },
+      ]
     },
-    {
-      imgageList: [imgRaptor1, imgRaptor2],
-      nameCar: "Ranger Raptor",
-      priceCar: "1,198,000,000",
-      fuelTankCapacity: "90l",
-      bodyStyle: "Sedan",
-      transmission: "Auto",
-    },
-    {
-      imgageList: [imgTransit1, imgTransit2, imgTransit3],
-      nameCar: "Transit",
-      priceCar: "798,000,000",
-      fuelTankCapacity: "90l",
-      bodyStyle: "Sedan",
-      transmission: "Auto",
-    },
+    
+    
   ]
   const questionClasses = [HomeStyle.question, "py-5"].join(" ")
   const questionList = [
