@@ -9,6 +9,7 @@ import {
   faSearch,
   faDollarSign,
 } from "@fortawesome/free-solid-svg-icons"
+import Img from "gatsby-image"
 
 export default function CarInfo(props) {
   const cardClasses = ["card", CarInfoStyle.carCard].join(" ")
@@ -39,7 +40,7 @@ export default function CarInfo(props) {
     transmission,
     modelList,
   } = props
-
+//   console.log("imgageList ", imgageList)
   return (
     <Col className="col-12 col-md-6 col-lg-6 mx-auto my-3">
       {/* <div className="card car-card"> */}
@@ -47,7 +48,7 @@ export default function CarInfo(props) {
         <Carousel>
           {imgageList.map((image, i) => (
             <Carousel.Item key={i}>
-              <img className={imgClasses} src={image} alt={" slide " + i} />
+              <Img className={imgClasses} fluid={image} alt={" slide " + i} />
             </Carousel.Item>
           ))}
         </Carousel>

@@ -4,6 +4,8 @@ import SEO from "../components/seo"
 import CarInfo from "../components/CarInfo"
 import { Container, Row, Col, Carousel, Table } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {useStaticQuery, graphql } from 'gatsby'
+
 import {
   faCar,
   faCogs,
@@ -75,17 +77,76 @@ function QuestionTextTemplate(question, i) {
   )
 }
 export default function HomePage() {
+  
+  const query = useStaticQuery( graphql`
+  query{
+    fordEcoSport: allFile(filter: {relativeDirectory: {eq: "ford-eco-sport"}}) {
+      nodes {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+    fordRanger: allFile(filter: {relativeDirectory: {eq: "ford-ranger"}}) {
+      nodes {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+    fordTransit: allFile(filter: {relativeDirectory: {eq: "ford-transit"}}) {
+      nodes {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+    fordExplorer: allFile(filter: {relativeDirectory: {eq: "ford-explorer"}}) {
+      nodes {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+    fordEverest: allFile(filter: {relativeDirectory: {eq: "ford-everest"}}) {
+      nodes {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+    fordTourneo: allFile(filter: {relativeDirectory: {eq: "ford-tourneo"}}) {
+      nodes {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  }
+  `);
+
+  const FordEcoSportImages = query.fordEcoSport.nodes.map(node => node.childImageSharp.fluid);
+  const FordRangerImages = query.fordRanger.nodes.map(node => node.childImageSharp.fluid);
+  const FordEverestImages = query.fordEverest.nodes.map(node => node.childImageSharp.fluid);
+  const FordTransitImages = query.fordTransit.nodes.map(node => node.childImageSharp.fluid);
+  const FordExplorerImages = query.fordExplorer.nodes.map(node => node.childImageSharp.fluid);
+  const FordTourneoImages = query.fordTourneo.nodes.map(node => node.childImageSharp.fluid);
+  // console.log("FordEcoImages ", FordEcoSportImages);
   const carList = [
     {
-      imgageList: [
-        imgEcosport1,
-        imgEcosport2,
-        imgEcosport3,
-        imgEcosport4,
-        imgEcosport5,
-        imgEcosport6,
-        imgEcosport7,
-      ],
+      imgageList: [...FordEcoSportImages],
       nameCar: "Ecosport",
       priceCar: "545,000,000",
       fuelTankCapacity: "60l",
@@ -121,7 +182,7 @@ export default function HomePage() {
       ],
     },
     {
-      imgageList: [imgEverest1, imgEverest2, imgEverest3],
+      imgageList: [...FordEverestImages],
       nameCar: "Everest",
       priceCar: "999,000,000",
       fuelTankCapacity: "100l",
@@ -157,7 +218,7 @@ export default function HomePage() {
       ],
     },
     {
-      imgageList: [imgExplorer1, imgExplorer2, imgExplorer3],
+      imgageList: [...FordExplorerImages],
       nameCar: "Explorer",
       priceCar: "1,999,000,000",
       fuelTankCapacity: "90l",
@@ -173,7 +234,7 @@ export default function HomePage() {
       ],
     },
     {
-      imgageList: [imgTourneo1, imgTourneo2, imgTourneo3],
+      imgageList: [...FordTourneoImages],
       nameCar: "Tourneo",
       priceCar: "999,000,000",
       fuelTankCapacity: "90l",
@@ -194,7 +255,7 @@ export default function HomePage() {
       ],
     },
     {
-      imgageList: [imgTransit1, imgTransit2, imgTransit3],
+      imgageList: [...FordTransitImages],
       nameCar: "Transit",
       priceCar: "872,000,000",
       fuelTankCapacity: "90l",
@@ -220,7 +281,7 @@ export default function HomePage() {
       ],
     },
     {
-      imgageList: [imgRanger1, imgRanger2, imgRanger3],
+      imgageList: [...FordRangerImages],
       nameCar: "Ranger",
       priceCar: "616,000,000",
       fuelTankCapacity: "90l",
