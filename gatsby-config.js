@@ -1,18 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: `Đại lý Ford Vinh`,
-    description: `Move from wordpress to gastby js`,
+    description: `Vinh Ford - Đại lý uỷ quyền chính thức từ Ford Việt Nam.`,
+    keywords: `Ford Focus, Ecosport, Everest, Explorer, Ranger, Transit, Ranger Raptor`,
+    url: `http://fordvinh.com.vn/`,
     author: `@anhld`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

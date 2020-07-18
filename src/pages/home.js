@@ -369,7 +369,7 @@ export default function HomePage() {
   ]
   return (
     <Layout>
-      <SEO title="Home page"></SEO>
+      <SEO title="Đại lý xe Ford Vinh"></SEO>
       <Container id="priceTable">
         <Row className="mb-5 mt-5">
           <Col className="d-flex flex-wrap text-uppercase justify-content-center">
