@@ -41,19 +41,19 @@ export default function Footer() {
               <h4 className="question-title text-capitalize font-weight-bold">
                 {"Thông tin  liên hệ"}
               </h4>
-              <div class="row">
+              <div className="row">
               <p>
                   <FontAwesomeIcon icon={faLocationArrow} />
                   {"   Địa chỉ: Km2 +200, Đường Lê Nin Tp.Vinh"}
                 </p>
               </div>
-              <div class="row">
+              <div className="row">
               <p>
                   <FontAwesomeIcon icon={faMoneyCheck} />
                   {"   Mã số thuế: 2900646777"}
                 </p>
               </div>
-              <div class="row">
+              <div className="row">
               <p>
                   <FontAwesomeIcon icon={faMobile} />
                   {"   Hotline: 0977 857 315"}
