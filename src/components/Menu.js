@@ -17,7 +17,7 @@ import FordLogo from "../assets/img/ford-vector-logo.svg"
 
 
 const Menu = () => {
-  const numberPhone = "0333037357"
+  const numberPhone = "0977857315"
   return (
     <section id="hero" className={style.hero}>
       <Navbar  expand="lg" >
