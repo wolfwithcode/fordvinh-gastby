@@ -3,7 +3,7 @@ module.exports = {
     title: `Đại lý Ford Vinh`,
     description: `Vinh Ford - Đại lý uỷ quyền chính thức từ Ford Việt Nam.`,
     keywords: `Ford Focus, Ecosport, Everest, Explorer, Ranger, Transit, Ranger Raptor`,
-    url: `http://fordvinh.com.vn/`,
+    url: `https://www.xefordvinh.com.vn/`,
     author: `@anhld`,
   },
   plugins: [
