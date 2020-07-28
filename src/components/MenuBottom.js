@@ -27,7 +27,7 @@ const tabs = [{
 
 export default function MenuBottom() {
     return (
-        <Container>
+        <Container className="d-block d-sm-none">
         <nav className="navbar fixed-bottom navbar-light"  role="navigation" style={{backgroundColor:'#0066ff'}}>
         <Nav className="w-100">
           <div className=" d-flex flex-row justify-content-around w-100">
