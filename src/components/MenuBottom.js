@@ -35,7 +35,7 @@ export default function MenuBottom() {
               tabs.map((tab, index) =>(
                 <NavItem key={`tab-${index}`} style={{ borderTop: 'solid 1px #EBEBEB'}}>
                   <NavLink href={tab.route} className="nav-link" style={{color: 'white'}}>
-                    <div className="row d-flex flex-column justify-content-center align-items-center">
+                    <div className="row d-flex flex-column justify-content-center align-items-center" style={{marginLeft:'0', marginRight:0, marginBottom:'15px'}}>
                       <FontAwesomeIcon size="lg" icon={tab.icon}/>
                       <div>{tab.label}</div>
                     </div>
