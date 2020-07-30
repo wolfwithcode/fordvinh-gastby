@@ -1,19 +1,19 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import style from "./Menu.module.css"
 import {
   Navbar,
-  NavDropdown,
-  FormControl,
-  Button,
+  // NavDropdown,
+  // FormControl,
+  // Button,
   Nav,
-  Form,
+  // Form,
   Container as section,
 } from "react-bootstrap"
 
 
-import HeroImage from "../images/ford-ranger.jpeg"
-import FordLogo from "../assets/img/ford-vector-logo.svg"
+// import HeroImage from "../images/ford-ranger.jpeg"
+// import FordLogo from "../assets/img/ford-vector-logo.svg"
 
 
 const Menu = () => {

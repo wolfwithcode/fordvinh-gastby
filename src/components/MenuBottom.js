@@ -1,51 +1,73 @@
-import React from 'react'
-import {Nav, NavItem, NavLink, Container} from 'react-bootstrap'
+import React from "react"
+import {
+  Navbar,
+  Nav,
+  NavItem,
+  NavLink,
+  Container,
+  Card,
+  Button,
+} from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSearch, faHome, faUserCircle, faDollarSign, faAddressBook, faPhone } from '@fortawesome/free-solid-svg-icons';
-import style from '../styles/MenuBottom.module.css'
+// import { faSearch, faHome, faUserCircle, faDollarSign, faAddressBook, faPhone } from '@fortawesome/free-solid-svg-icons';
+import {
+  faDollarSign,
+  faAddressBook,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons"
+// import style from '../styles/MenuBottom.module.css'
 
-const tabs = [{
+const tabs = [
+  {
     route: "#priceTable",
     icon: faDollarSign,
-    label: "Báo giá"
-  },{
+    label: "Báo giá",
+  },
+  {
     route: "#contact",
     icon: faAddressBook,
-    label: "Địa chỉ"
-  },{
+    label: "Địa chỉ",
+  },
+  {
     route: "tel:0977857315",
     icon: faPhone,
-    label: "Gọi"
-  }]
+    label: "Gọi",
+  },
+]
 
-
-  // console.log('style ',style)
-
+// console.log('style ',style)
 
 // const navbarClasses = [style.navbar,'fixed-bottom', 'navbar-light'].join(' ') ;
 // const bottomTabNavClasses = [style.bottomNavLink,'fixed-bottom', 'navbar-light'].join(' ') ;
 
 export default function MenuBottom() {
-    return (
-        <Container className="d-block d-sm-none">
-        <nav className="navbar fixed-bottom navbar-light"  role="navigation" style={{backgroundColor:'#0066ff'}}>
-        <Nav className="w-100">
-          <div className=" d-flex flex-row justify-content-around w-100">
-            {
-              tabs.map((tab, index) =>(
-                <NavItem key={`tab-${index}`} style={{ borderTop: 'solid 1px #EBEBEB'}}>
-                  <NavLink href={tab.route} className="nav-link" style={{color: 'white'}}>
-                    <div className="row d-flex flex-column justify-content-center align-items-center" style={{marginLeft:'0', marginRight:0, marginBottom:'15px'}}>
-                      <FontAwesomeIcon size="lg" icon={tab.icon}/>
-                      <div>{tab.label}</div>
-                    </div>
-                  </NavLink>
-                </NavItem>
-              ))
-            }
-          </div>
+  const numberPhone = "0977857315"
+  return (
+    <Card className="d-block d-sm-none" style={{ marginBottom: "15px" }}>
+      <Card.Header>
+        <Nav
+          variant="pills"
+          defaultActiveKey="#priceTable"
+          className={`fixed-bottom justify-content-center mx-auto`}
+          style={{ backgroundColor: "#0066ff" }}
+        >
+          {tabs.map((tab, index) => (
+            <Nav.Item
+              key={`tab-${index}`}
+              style={{
+                borderTop: "solid 5px #EBEBEB",
+                marginBottom: "25px",
+                marginRight: "10px",
+              }}
+            >
+              <Nav.Link href={tab.route} style={{ color: "white" }}>
+                <FontAwesomeIcon size="lg" icon={tab.icon} />
+                <a>{tab.label}</a>
+              </Nav.Link>
+            </Nav.Item>
+          ))}
         </Nav>
-      </nav>
-      </Container>
-    )
+      </Card.Header>
+    </Card>
+  )
 }

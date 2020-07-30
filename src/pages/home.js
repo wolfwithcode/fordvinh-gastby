@@ -2,14 +2,15 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CarInfo from "../components/CarInfo"
-import { Container, Row, Col, Carousel, Table } from "react-bootstrap"
+// import { Container, Row, Col, Carousel, Table } from "react-bootstrap"
+import { Container, Row, Col, } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {useStaticQuery, graphql } from 'gatsby'
 
 import {
-  faCar,
-  faCogs,
-  faGasPump,
+  // faCar,
+  // faCogs,
+  // faGasPump,
   faSearch,
   faDollarSign,
 } from "@fortawesome/free-solid-svg-icons"

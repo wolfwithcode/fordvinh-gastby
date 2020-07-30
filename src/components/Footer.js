@@ -8,15 +8,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 export default function Footer() {
-  const titleText = "Bạn Đang Tìm Kiếm Một Chiếc Xe?"
-  const questionInfoText =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus!"
+  // const titleText = "Bạn Đang Tìm Kiếm Một Chiếc Xe?"
+  // const questionInfoText =
+  //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem repellendus!"
   const questionColumClasses = [
     "col-10 mx-auto my-2 col-md-6 d-flex justify-content-between p-4",
     // HomeStyle.questionGrey,
   ].join(" ")
   //   const questionIconClasses = [HomeStyle.questionIcon, "mr-3"].join(" ")
-  const questionIconClasses = ["", "mr-3"].join(" ")
+  // const questionIconClasses = ["", "mr-3"].join(" ")
   //   const questionInfo = HomeStyle.questionInfo
   const questionInfo = ""
   //   const icon = faSearch

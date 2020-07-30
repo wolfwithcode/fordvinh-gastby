@@ -1,9 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import HomePage from "./home"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { Helmet } from "react-helmet"
+// import Layout from "../components/layout"
+// import SEO from "../components/seo"
+// import { Helmet } from "react-helmet"
 
 const IndexPage = () => (
   <div>

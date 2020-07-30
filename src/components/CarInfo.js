@@ -6,8 +6,8 @@ import {
   faCar,
   faCogs,
   faGasPump,
-  faSearch,
-  faDollarSign,
+  // faSearch,
+  // faDollarSign,
 } from "@fortawesome/free-solid-svg-icons"
 import Img from "gatsby-image"
 
@@ -35,7 +35,7 @@ export default function CarInfo(props) {
     nameCar,
     priceCar,
     fuelTankCapacity,
-    bodyStyle,
+    // bodyStyle,
     seat,
     transmission,
     modelList,
