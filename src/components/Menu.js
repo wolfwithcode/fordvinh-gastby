@@ -28,7 +28,7 @@ const Menu = () => {
             <Nav.Link href="#priceTable" style={{color:"black"}} >Bảng báo giá</Nav.Link>
             <Nav.Link href="#contact" style={{color:"black"}} >Liên hệ</Nav.Link>
             <Nav.Link href={"tel:"+numberPhone} style={{color:"black"}} >Gọi điện ngay</Nav.Link>
-            {/* <Nav.Link href="#link" style={{color:"black"}} >Gọi điện ngay</Nav.Link> */}
+            <Nav.Link to="/blog" style={{color:"black"}} >Tin tức</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
