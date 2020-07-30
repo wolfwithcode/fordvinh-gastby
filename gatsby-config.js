@@ -24,14 +24,14 @@ module.exports = {
       }
     },
     `gatsby-transformer-remark`,
-    // {
-    //   resolve: "gatsby-source-wordpress",
-    //   options: {
-    //     // I have created a dummy site for us to use with the plugins we discussed
-    //     baseUrl: "fordvinh.com.vn/",
-    //     protocol: "http",
-    //     hostingWPCOM: false,        
-    //   },
-    // },    
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        // I have created a dummy site for us to use with the plugins we discussed
+        baseUrl: "fordvinh.com.vn/",
+        protocol: "http",
+        hostingWPCOM: false,        
+      },
+    },    
   ],
 }

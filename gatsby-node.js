@@ -1,43 +1,36 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const { createFilePath } = require("gatsby-source-filesystem")
+const path = require("path")
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === "MarkdownRemark") {
+    const slug = createFilePath({ node, getNode, basePath: "posts" })
+    createNodeField({
+      node,
+      name: "slug",
+      value: slug,
+    })
+  }
+}
 
-// You can delete this file if you're not using it
-const path = require('path')
-
-exports.createPages = ({boundActionCreators, graphql }) => {
-    const { createPage } = boundActionCreators
-    const postTemplate = path.resolve('src/templates/blog-post.js')
-
-    return graphql(`
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  return graphql(`
     {
-        allMarkdownRemark {
-          edges {
-            node {
-              html
-              id
-              frontmatter {
-                author
-                date
-                path
-                title
-              }
-            }
-          }
+      allWordpressPost {
+        nodes {
+          slug
         }
       }
-    `).then(res => {
-        if(res.errors){
-            return Promise.reject(res.errors)
-        }
-
-        res.data.allMarkdownRemark.edges.forEach(({ node }) => {
-            createPage({
-                path: node.frontmatter.path,
-                component: postTemplate,
-            })
-        })
+    }
+  `).then(result => {
+    result.data.allWordpressPost.nodes.forEach(node => {
+      createPage({
+        path: node.slug,
+        component: path.resolve("./src/layouts/BlogpostLayout.js"),
+        context: {
+          slug: node.slug,
+        },
+      })
     })
+  })
 }
