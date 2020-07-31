@@ -11,7 +11,7 @@ const Post = props => (
           <div dangerouslySetInnerHTML={{ __html: props.excerpt }} />
         
         <Button variant="warning" href={props.readMore}>
-          Read More...
+          Xem
         </Button>
       </Card.Body>
     </Card>
