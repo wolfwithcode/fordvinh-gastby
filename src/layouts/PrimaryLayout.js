@@ -1,12 +1,15 @@
 import React from "react"
 // import Header from "../components/Header"
 // import Footer from "../components/Footer"
+import Menu from '../components/Menu'
+import Footer from '../components/Footer'
+import MenuBottom from '../components/MenuBottom'
 import SEO from "../components/seo"
 
 const PrimaryLayout = props => (
   <div>
     <SEO />
-    {/* <Header /> */}
+    <Menu enableBackgroundImage={false}/>
     <main>
       <div className="container">
         <div className="row justify-content-md-center">
@@ -15,6 +18,7 @@ const PrimaryLayout = props => (
       </div>
     </main>
     {/* <Footer /> */}
+    <MenuBottom />
   </div>
 )
 

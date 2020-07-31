@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      <Menu/>
+      <Menu enableBackgroundImage={true}/>
       <div>
         <main>{children}</main>
         <Footer>

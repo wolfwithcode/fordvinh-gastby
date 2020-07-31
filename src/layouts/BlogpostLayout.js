@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-// import Header from "../components/Header"
-// import Footer from "../components/Footer"
+import Menu from '../components/Menu'
+import Footer from '../components/Footer'
+import MenuBottom from '../components/MenuBottom'
 import SEO from "../components/seo"
 import innertext from "innertext"
 const BlogpostLayout = ({ data }) => {
@@ -12,10 +13,10 @@ const BlogpostLayout = ({ data }) => {
       <SEO
         title={innertext(post.title)}
         description={innertext(post.excerpt)}
-        image={post.featured_media.source_url}
+        image={(post.feature_media && post.featured_media.source_url || "") }
         keywords={post.categories.map(res => res.name).join(", ")}
       />
-      {/* <Header /> */}
+      <Menu enableBackgroundImage={false}/>
       <main>
         <div className="container">
           <div className="row justify-content-md-center">
@@ -25,6 +26,7 @@ const BlogpostLayout = ({ data }) => {
         </div>
       </main>
       {/* <Footer /> */}
+    <MenuBottom />
     </div>
   )
 }

@@ -6,8 +6,9 @@ const BlogPage = ({ data }) => {
     console.log( 'BlogPage data',data);
 return (
     <PrimaryLayout column="col-xs-6">
-    {data.allWordpressPost.nodes.map(node => (
+    {data.allWordpressPost.nodes.map((node, index) => (
       <Post
+        key={'post-'+index}
         alt={node.featured_media && node.featured_media.slug || ""}
         image={node.featured_media && node.featured_media.source_url || ""}
         title={node.title}

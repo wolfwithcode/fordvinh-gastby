@@ -14,19 +14,20 @@ import {
   faDollarSign,
   faAddressBook,
   faPhone,
+  faHome,
 } from "@fortawesome/free-solid-svg-icons"
 // import style from '../styles/MenuBottom.module.css'
 
 const tabs = [
   {
-    route: "#priceTable",
+    route: "/#priceTable",
     icon: faDollarSign,
     label: "Báo giá",
   },
   {
-    route: "#contact",
-    icon: faAddressBook,
-    label: "Địa chỉ",
+    route: "/#",
+    icon: faHome,
+    label: "Trang chủ",
   },
   {
     route: "tel:0977857315",
