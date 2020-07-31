@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 
 const PrimaryLayout = props => (
   <div>
-    <SEO />
+    <SEO title="Tin tức xe Ford Vinh"/>
     <Menu enableBackgroundImage={false}/>
     <main>
       <div className="container">

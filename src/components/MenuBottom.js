@@ -63,7 +63,7 @@ export default function MenuBottom() {
             >
               <Nav.Link href={tab.route} style={{ color: "white" }}>
                 <FontAwesomeIcon size="lg" icon={tab.icon} />
-                <a>{tab.label}</a>
+                {tab.label}
               </Nav.Link>
             </Nav.Item>
           ))}
