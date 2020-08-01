@@ -16,7 +16,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import HomeStyle from "../styles/home.module.css"
 import Banner from "../components/Banner"
-import Menu from "../components/Menu"
+import Footer from "../components/Footer"
+// import Menu from "../components/Menu"
 // import img1 from "../images/ford-ranger/galary/ford-ranger-2018-mau-den-49006j.jpg"
 // import img2 from "../images/ford-ranger/galary/ford-ranger-2018-mau-trang-49003j.jpg"
 // import img3 from "../images/ford-ranger/galary/ford-ranger-2018-mau-xam-49005j.jpg"
@@ -360,11 +361,11 @@ export default function HomePage() {
   return (
     <Layout>
       <SEO title="Đại lý xe Ford Vinh"></SEO>
-      {/* <div className={ContainerStyle}> */}
       <div className="col-md-8 offset-md-2" style={{paddingLeft:'0px', paddingRight:'0px'}}>
-      <Menu enableBackgroundImage={true}/>
+      {/* <Menu enableBackgroundImage={true}/> */}
       <Banner/>
       </div>
+      
       
       <Container id="priceTable">
         <Row className="mb-5 mt-5">
@@ -382,6 +383,7 @@ export default function HomePage() {
           {questionList.map((question, i) => QuestionTextTemplate(question,i))}
         </Row>
       </section>
+      <Footer/>        
     </Layout>
   )
 }

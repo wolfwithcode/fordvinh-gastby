@@ -8,11 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
-
-// import Header from "./header"
-// import Menu from "../components/Menu"
+// import Banner from "../components/Banner"
+import Menu from "../components/Menu"
 import MenuBottom from '../components/MenuBottom'
-import Footer from "../components/Footer"
+// import Footer from "../components/Footer"
 
 import "./layout.css"
 
@@ -30,12 +29,12 @@ const Layout = ({ children }) => {
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      
+      <div className="col-md-8 offset-md-2" style={{paddingLeft:'0px', paddingRight:'0px'}}>
+      <Menu enableBackgroundImage={true}/>
+      {/* <Banner/> */}
+      </div>
       <div>
-        <main>{children}</main>
-        <Footer>
-
-        </Footer>
+        <main>{children}</main>        
       </div>
       <MenuBottom />
     </>
