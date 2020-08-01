@@ -30,6 +30,7 @@ function SEO({ description, lang, meta, title }) {
   const metaDescription = description || site.siteMetadata.description
 
   return (
+   
     <Helmet
       htmlAttributes={{
         lang,
@@ -74,7 +75,9 @@ function SEO({ description, lang, meta, title }) {
           content: site.siteMetadata.keywords,
         },
       ].concat(meta)}
-    />
+    >
+       {/* <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"/>  */}
+    </Helmet>
   )
 }
 

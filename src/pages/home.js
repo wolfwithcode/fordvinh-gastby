@@ -15,6 +15,7 @@ import {
   faDollarSign,
 } from "@fortawesome/free-solid-svg-icons"
 import HomeStyle from "../styles/home.module.css"
+import Banner from "../components/Banner"
 
 // import img1 from "../images/ford-ranger/galary/ford-ranger-2018-mau-den-49006j.jpg"
 // import img2 from "../images/ford-ranger/galary/ford-ranger-2018-mau-trang-49003j.jpg"
@@ -355,6 +356,7 @@ export default function HomePage() {
   return (
     <Layout>
       <SEO title="Đại lý xe Ford Vinh"></SEO>
+      <Banner/>
       <Container id="priceTable">
         <Row className="mb-5 mt-5">
           <Col className="d-flex flex-wrap text-uppercase justify-content-center">

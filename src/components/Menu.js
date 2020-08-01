@@ -16,12 +16,12 @@ import HeroImage from "../images/ford-ranger.jpeg"
 // import FordLogo from "../assets/img/ford-vector-logo.svg"
 
 const backgroundStyle = {
-  backgroundImage: `url(${HeroImage})`,
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  width: '100%',
-  height: '100vh',
+  // backgroundImage: `url(${HeroImage})`,
+  // backgroundPosition: 'center',
+  // backgroundSize: 'cover',
+  // backgroundRepeat: 'no-repeat',
+  // width: '100%',
+  // height: '50vh',
 }
 const Menu = (props) => {
   const {enableBackgroundImage} = props;
