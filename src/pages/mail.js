@@ -6,16 +6,23 @@ import emailjs from "emailjs-com"
 
 import React, { Component } from "react"
 
-import style from '../styles/Mail.module.css'
-const formControlClasses = ['formControl', style.formControl].join(' ');
+import style from "../styles/Mail.module.css"
+const formControlClasses = ["formControl", style.formControl].join(" ")
 
 export default class MailForm extends Component {
   constructor(props) {
     super(props)
-    this.state = { carModel: "", name: "", phoneNumber: "", address: "" }
+    this.state = {
+      carModel: "",
+      name: "",
+      phoneNumber: "",
+      address: "",
+      errorVisible: false,
+    }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.sendEmail = this.sendEmail.bind(this)
+    this.checkPhoneNumer = this.checkPhoneNumer.bind(this)
   }
 
   handleChange(event) {
@@ -40,9 +47,25 @@ export default class MailForm extends Component {
     event.preventDefault()
   }
 
+  checkPhoneNumer(phoneNumber) {
+    console.log("phoneNumer ", phoneNumber)
+    if (isNaN(phoneNumber) || phoneNumber.length > 11) return false
+    return true
+  }
   handleSubmit(event) {
-    // console.log(...this.state)
-    this.sendEmail(event, this.state)
+    // const isValid = this.checkPhoneNumer(this.state.phoneNumber);
+    const phoneNumer = this.state.phoneNumber
+    console.log("this.state.phoneNumber ", phoneNumer)
+    const isValid = this.checkPhoneNumer(phoneNumer)
+    // this.checkPhoneNumer(phoneNumer);
+    console.log("isValid ", isValid)
+
+    if (isValid) {
+      this.sendEmail(event, this.state)
+      this.setState({ errorVisible: false });
+    } else {
+      this.setState({ errorVisible: true });
+    }
     event.preventDefault()
   }
 
@@ -140,7 +163,13 @@ export default class MailForm extends Component {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary" style={{width:'100%'}}>Đăng ký </button>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            style={{ width: "100%" }}
+          >
+            Đăng ký{" "}
+          </button>
           {/* <button type="submit" class="btn btn-primary">Đăng ký</button> */}
           <small
             className={style.error}
@@ -148,8 +177,8 @@ export default class MailForm extends Component {
               visibility: this.state.errorVisible ? "visible" : "hidden",
             }}
           >
-            {" "}
-            Error message
+            
+            Xin vui lòng nhập số điện thoại
           </small>
         </form>
       </div>
