@@ -164,7 +164,7 @@ export default class MailForm extends Component {
               <button
                 type="submit"
                 className="btn btn-primary"
-                style={{ width: "100%" }}
+                style={{ width: "100%", marginTop: '10px' }}
               >
                 Đăng ký{" "}
               </button>
