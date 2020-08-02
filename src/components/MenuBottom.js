@@ -20,7 +20,7 @@ import {
 
 const tabs = [
   {
-    route: "/#priceTable",
+    route: "/mail",
     icon: faDollarSign,
     label: "Báo giá",
   },
