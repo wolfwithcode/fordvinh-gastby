@@ -187,6 +187,7 @@ export default class MailForm extends Component {
         <div>
         <SEO title="Báo giá xe Ford Vinh"/>
     <Menu enableBackgroundImage={false}/>
+    <div className={["container"].join(" ")}>
         <Card>
           <Card.Body>
             <Card.Title>Thông báo</Card.Title>
@@ -199,6 +200,7 @@ export default class MailForm extends Component {
             </Button>
           </Card.Body>
         </Card>
+        </div>
         <MenuBottom />
         </div>
       )
