@@ -38,7 +38,7 @@ const Menu = (props) => {
             <Nav.Link href="/#contact" style={{color:"black"}} >Liên hệ</Nav.Link>
             <Nav.Link href={"tel:"+numberPhone} style={{color:"black"}} >Gọi điện ngay</Nav.Link>
             <Nav.Link href="/blog" style={{color:"black"}} >Tin tức</Nav.Link>
-            <Nav.Link href="/mail" style={{color:"black"}} >Gửi báo gía</Nav.Link>
+            <Nav.Link href="/mail" style={{color:"black"}} >Gửi báo giá</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

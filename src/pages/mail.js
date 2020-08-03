@@ -10,6 +10,15 @@ import emailjs from "emailjs-com"
 import React, { Component } from "react"
 
 import style from "../styles/Mail.module.css"
+
+const carModelList = [
+  "Ford Ecosport",
+  "Ford Everest",
+  "Ford Explorer",
+  "Ford Tourneo",
+  "Ford Transit",
+  "Ford Ranger",
+]
 const formControlClasses = ["formControl", style.formControl].join(" ")
 
 export default class MailForm extends Component {
@@ -23,6 +32,7 @@ export default class MailForm extends Component {
       errorVisible: false,
       activeForm: true,
     }
+
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.sendEmail = this.sendEmail.bind(this)
@@ -94,115 +104,112 @@ export default class MailForm extends Component {
         }
       )
   }
-  
+
   render() {
     if (this.state.activeForm) {
       return (
-        <div>
-          <SEO title="Báo giá xe Ford Vinh"/>
-          <Menu enableBackgroundImage={false} />
-          <div className={["container", style.container].join(" ")}>
-            <form onSubmit={this.handleSubmit} className={style.form}>
-              <h3 className={style.title}>Nhận báo giá với Ford Vinh</h3>
-              <div className={formControlClasses}>
-                <label className={style.label}>Chọn mẫu xe</label>
-                <select
-                  name="carModel"
-                  value={this.state.carModel}
-                  onChange={this.handleChange}
-                  className={style.input}
-                  defaultValue="Ford Ecosport"
-                  required
+        <Layout>
+          <SEO title="Báo giá xe Ford Vinh" />
+          <div>
+            <div className={["container", style.container].join(" ")}>
+              <form onSubmit={this.handleSubmit} className={style.form}>
+                <h3 className={style.title}>Nhận báo giá với Ford Vinh</h3>
+                <div className={formControlClasses}>
+                  <label className={style.label}>Chọn mẫu xe</label>
+                  <select
+                    name="carModel"
+                    value={this.state.carModel}
+                    onChange={this.handleChange}
+                    className={style.input}
+                    defaultValue="Ford Ecosport"
+                    required
+                  >
+                    <option value="" selected hidden>Mẫu xe...</option>
+                    {carModelList.map((car, index) => (
+                      <option key={"car-" + index} value={car}>
+                        {car}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className={formControlClasses}>
+                  <label className={style.label}>Tên:</label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                    placeholder="Họ tên"
+                    className={style.input}
+                    required
+                  />
+                </div>
+                <div className={formControlClasses}>
+                  <label className={style.label}>Điện thoại:</label>
+                  <input
+                    name="phone"
+                    type="text"
+                    value={this.state.phoneNumber}
+                    onChange={this.handleChange}
+                    placeholder="Điện thoại"
+                    className={style.input}
+                    required
+                  />
+                </div>
+                <div className={formControlClasses}>
+                  <label className={style.label}>Địa chỉ:</label>
+                  <input
+                    name="address"
+                    type="text"
+                    value={this.state.address}
+                    onChange={this.handleChange}
+                    placeholder="Địa chỉ"
+                    className={style.input}
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  style={{ width: "100%", marginTop: "10px" }}
                 >
-                  <option value="" selected hidden>Mẫu xe...</option>
-                  <option value="Ford Ecosport">Ford Ecosport</option>
-                  <option value="Ford Ranger">Ford Ranger</option>
-                  <option value="Ford Everest">Ford Everest</option>
-                  <option value="Ford Transit">Ford Transit</option>
-                </select>
-                {/* <small>Error message</small> */}
-              </div>
-              <div className={formControlClasses}>
-                <label className={style.label}>Tên:</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  value={this.state.name}
-                  onChange={this.handleChange}
-                  placeholder="Họ tên"
-                  className={style.input}
-                  required
-                />
-                {/* <small className={style.error}>Error message</small> */}
-              </div>
-              <div className={formControlClasses}>
-                <label className={style.label}>Điện thoại:</label>
-                <input
-                  name="phone"
-                  type="text"
-                  value={this.state.phoneNumber}
-                  onChange={this.handleChange}
-                  placeholder="Điện thoại"
-                  className={style.input}
-                  required
-                />
-                {/* <small>Error message</small> */}
-              </div>
-              <div className={formControlClasses}>
-                <label className={style.label}>Địa chỉ:</label>
-                <input
-                  name="address"
-                  type="text"
-                  value={this.state.address}
-                  onChange={this.handleChange}
-                  placeholder="Địa chỉ"
-                  className={style.input}
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-primary"
-                style={{ width: "100%", marginTop: '10px' }}
-              >
-                Đăng ký{" "}
-              </button>
-              {/* <button type="submit" class="btn btn-primary">Đăng ký</button> */}
-              <small
-                className={style.error}
-                style={{
-                  visibility: this.state.errorVisible ? "visible" : "hidden",
-                }}
-              >
-                Xin vui lòng nhập đúng số  điện thoại
-              </small>
-            </form>
+                  Đăng ký{" "}
+                </button>
+                <small
+                  className={style.error}
+                  style={{
+                    visibility: this.state.errorVisible ? "visible" : "hidden",
+                  }}
+                >
+                  Xin vui lòng nhập đúng số điện thoại
+                </small>
+              </form>
+            </div>
           </div>
-          <MenuBottom />
-        </div>
+        </Layout>
       )
     } else {
       return (
-        <div>
-        <SEO title="Báo giá xe Ford Vinh"/>
-    <Menu enableBackgroundImage={false}/>
-    <div className={["container"].join(" ")}>
-        <Card>
-          <Card.Body>
-            <Card.Title>Thông báo</Card.Title>
-            <Card.Text>
-              Chúng tôi đã tiếp nhận yêu cầu báo giá. Xin vui lòng đợi trong
-              giây lát.
-            </Card.Text>
-            <Button variant="primary" href="/">
-              Trang chủ
-            </Button>
-          </Card.Body>
-        </Card>
-        </div>
-        <MenuBottom />
-        </div>
+        <Layout>
+          <SEO title="Báo giá xe Ford Vinh" />
+          <div>
+            <div className={["container"].join(" ")}>
+              <Card>
+                <Card.Body>
+                  <Card.Title>Thông báo</Card.Title>
+                  <Card.Text>
+                    Chúng tôi đã tiếp nhận yêu cầu báo giá. Xin vui lòng đợi
+                    trong giây lát.
+                  </Card.Text>
+                  <Button variant="primary" href="/">
+                    Trang chủ
+                  </Button>
+                </Card.Body>
+              </Card>
+            </div>
+          </div>
+        </Layout>
       )
     }
   }

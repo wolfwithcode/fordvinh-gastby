@@ -17,41 +17,6 @@ import {
 import HomeStyle from "../styles/home.module.css"
 import Banner from "../components/Banner"
 import Footer from "../components/Footer"
-// import Menu from "../components/Menu"
-// import img1 from "../images/ford-ranger/galary/ford-ranger-2018-mau-den-49006j.jpg"
-// import img2 from "../images/ford-ranger/galary/ford-ranger-2018-mau-trang-49003j.jpg"
-// import img3 from "../images/ford-ranger/galary/ford-ranger-2018-mau-xam-49005j.jpg"
-// ////ford eco sport
-// import imgEcosport1 from "../images/ford-eco-sport-1.jpeg"
-// import imgEcosport2 from "../images/ford-eco-sport-2.jpeg"
-// import imgEcosport3 from "../images/ford-eco-sport-3.jpeg"
-// import imgEcosport4 from "../images/ford-eco-sport-4.jpeg"
-// import imgEcosport5 from "../images/ford-eco-sport-5.jpeg"
-// import imgEcosport6 from "../images/ford-eco-sport-6.jpeg"
-// import imgEcosport7 from "../images/ford-eco-sport-7.jpeg"
-// ////ford everest
-// import imgEverest1 from "../images/ford-everest-1.jpeg"
-// import imgEverest2 from "../images/ford-everest-2.jpeg"
-// import imgEverest3 from "../images/ford-everest-3.jpeg"
-////ford explorer
-// import imgExplorer1 from "../images/ford-explorer-1.jpeg"
-// import imgExplorer2 from "../images/ford-explorer-2.jpeg"
-// import imgExplorer3 from "../images/ford-explorer-3.jpeg"
-// ////ford ranger
-// import imgRanger1 from "../images/ford-ranger-1.jpeg"
-// import imgRanger2 from "../images/ford-ranger-2.jpeg"
-// import imgRanger3 from "../images/ford-ranger-3.jpeg"
-// ////ford raptor
-// import imgRaptor1 from "../images/ford-raptor-1.jpeg"
-// import imgRaptor2 from "../images/ford-raptor-2.jpeg"
-////ford transit
-// import imgTransit1 from "../images/ford-transit-1.jpeg"
-// import imgTransit2 from "../images/ford-transit-2.jpeg"
-// import imgTransit3 from "../images/ford-transit-3.jpeg"
-// ////ford tourneo
-// import imgTourneo1 from "../images/ford-tourneo-1.jpg"
-// import imgTourneo2 from "../images/ford-tourneo-2.jpg"
-// import imgTourneo3 from "../images/ford-tourneo-3.jpg"
 
 
 function QuestionTextTemplate(question, i) {
@@ -353,11 +318,7 @@ export default function HomePage() {
     },
   ]
 
-  // const carCardInfoList = carList.map((car, i) => (<CarInfo {...car} />) );
-  // const isLargeWindow = window.matchMedia('(min-width: 1200px)').matches;
-  // console.log('isLargeWindow ',isLargeWindow);
-  // const ContainerStyle = isLargeWindow ? "container" : "container-fluid"; 
-  // console.log('ContainerStyle  ',ContainerStyle);
+ 
   return (
     <Layout>
       <SEO title="Đại lý xe Ford Vinh"></SEO>
