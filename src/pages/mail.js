@@ -21,7 +21,7 @@ const carModelList = [
 ]
 const formControlClasses = ["formControl", style.formControl].join(" ")
 
-export default class MailForm extends Component {
+class ContactForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -67,7 +67,8 @@ export default class MailForm extends Component {
     return true
   }
   handleSubmit(event) {
-    // const isValid = this.checkPhoneNumer(this.state.phoneNumber);
+    // disable Form Contact in Contact Us page
+    this.props.enableContactForm(false);
     const phoneNumer = this.state.phoneNumber
     console.log("this.state.phoneNumber ", phoneNumer)
     const isValid = this.checkPhoneNumer(phoneNumer)
@@ -105,8 +106,7 @@ export default class MailForm extends Component {
       )
   }
 
-  render() {
-    if (this.state.activeForm) {
+  render() {    
       return (
         <Layout>
           <SEO title="Báo giá xe Ford Vinh" />
@@ -189,28 +189,53 @@ export default class MailForm extends Component {
           </div>
         </Layout>
       )
-    } else {
-      return (
-        <Layout>
-          <SEO title="Báo giá xe Ford Vinh" />
-          <div>
-            <div className={["container"].join(" ")}>
-              <Card>
-                <Card.Body>
-                  <Card.Title>Thông báo</Card.Title>
-                  <Card.Text>
-                    Chúng tôi đã tiếp nhận yêu cầu báo giá. Xin vui lòng đợi
-                    trong giây lát.
-                  </Card.Text>
-                  <Button variant="primary" href="/">
-                    Trang chủ
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-          </div>
-        </Layout>
-      )
+  }
+}
+
+
+
+function InfoMessage() {
+  return (
+    <Layout>
+    <SEO title="Báo giá xe Ford Vinh" />
+    <div>
+      <div className={["container"].join(" ")}>
+        <Card>
+          <Card.Body>
+            <Card.Title>Thông báo</Card.Title>
+            <Card.Text>
+              Chúng tôi đã tiếp nhận yêu cầu báo giá. Xin vui lòng đợi
+              trong giây lát.
+            </Card.Text>
+            <Button variant="primary" href="/">
+              Trang chủ
+            </Button>
+          </Card.Body>
+        </Card>
+      </div>
+    </div>
+  </Layout>
+  )
+}
+
+
+export default class ContactUsPage extends Component {
+  constructor(props){
+    super(props);
+    this.enableContactForm = this.enableContactForm.bind(this);
+    this.state = {
+      enableFormContact: true,
     }
+  }
+
+  enableContactForm(isEnable){
+    this.setState({enableFormContact: isEnable})
+  }
+  render() {
+    return (
+      <div>
+        {this.state.enableFormContact ? <ContactForm enableContactForm={this.enableContactForm}/> : <InfoMessage/> }
+      </div>
+    )
   }
 }
