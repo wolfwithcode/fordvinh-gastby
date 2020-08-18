@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap"
 
 
-import HeroImage from "../images/ford-ranger.jpeg"
+// import HeroImage from "../images/ford-ranger.jpeg"
 // import FordLogo from "../assets/img/ford-vector-logo.svg"
 
 const backgroundStyle = {
@@ -28,7 +28,7 @@ const Menu = (props) => {
   console.log('enableBackgroundImage',enableBackgroundImage)
   const numberPhone = "0977857315"
   return (
-    <section id="hero" style={(enableBackgroundImage && backgroundStyle)||{}}>
+    <section id="hero" >
       <Navbar  expand="lg" >
         <Navbar.Brand href="/" className={style.navbarBrandStyle} />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
