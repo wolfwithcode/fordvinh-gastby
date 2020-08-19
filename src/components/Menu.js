@@ -1,6 +1,7 @@
 import React from "react"
 // import { Link } from "gatsby"
 import style from "./Menu.module.css"
+import { useStaticQuery, graphql } from "gatsby"
 import {
   Navbar,
   // NavDropdown,
@@ -11,7 +12,7 @@ import {
   Container as section,
 } from "react-bootstrap"
 
-
+import Img from "gatsby-image"
 // import HeroImage from "../images/ford-ranger.jpeg"
 // import FordLogo from "../assets/img/ford-vector-logo.svg"
 
@@ -24,11 +25,32 @@ const backgroundStyle = {
   // height: '50vh',
 }
 const Menu = (props) => {
+  const data = useStaticQuery(graphql`
+    query {
+      contactImageSmallSize: file(relativePath: { eq: "banner/contact/banner-contact-small-size.png"}) {
+        childImageSharp {
+          fluid{
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      contactImageBigSize: file(relativePath: { eq: "banner/contact/banner-contact-big-size.png"}) {
+        childImageSharp {
+          fluid{
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   const {enableBackgroundImage} = props;
   console.log('enableBackgroundImage',enableBackgroundImage)
   const numberPhone = "0977857315"
   return (
     <section id="hero" >
+      <section fluid>
+      <Img fluid={data.contactImageSmallSize.childImageSharp.fluid} />
+      </section>
       <Navbar  expand="lg" >
         <Navbar.Brand href="/" className={style.navbarBrandStyle} />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
