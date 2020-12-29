@@ -182,7 +182,7 @@ export default function HomePage() {
         {
           modelName: "Ranger RAPTOR",
           engine: "2.0L Dầu",
-          price: "1.198.000.000",
+          price: "1.202.000.000",
         },
       ],
     },
@@ -195,30 +195,30 @@ export default function HomePage() {
       seat: "5 ghế",
       transmission: "Auto",
       modelList: [
-        {
-          modelName: "Ecosport 1.5 MT AMB",
-          engine: "1.5L Xăng",
-          price: "545.000.000",
-        },
-        {
-          modelName: "Ecosport 1.5 AT AMB",
-          engine: "1.5L Xăng",
-          price: "569.000.000",
-        },
+        // {
+        //   modelName: "Ecosport 1.5 MT AMB",
+        //   engine: "1.5L Xăng",
+        //   price: "545.000.000",
+        // },
+        // {
+        //   modelName: "Ecosport 1.5 AT AMB",
+        //   engine: "1.5L Xăng",
+        //   price: "569.000.000",
+        // },
         {
           modelName: "Ecosport 1.5 AT TREND",
           engine: "1.5L Xăng",
-          price: "593.000.000",
+          price: "603.000.000",
         },
         {
           modelName: "Ecosport 1.5 AT TITA",
           engine: "1.5L Xăng",
-          price: "648.000.000",
+          price: "646.000.000",
         },
         {
           modelName: "Ecosport 1.0 AT TITA",
           engine: "1.5L Ecoboost",
-          price: "689.000.000",
+          price: "686.000.000",
         },
       ],
     },
