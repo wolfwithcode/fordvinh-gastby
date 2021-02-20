@@ -177,7 +177,7 @@ export default function HomePage() {
         {
           modelName: "Ranger WILDTRACK 4X4",
           engine: "2.0L Dầu",
-          price: "918.000.000",
+          price: "925.000.000",
         },
         {
           modelName: "Ranger RAPTOR",
