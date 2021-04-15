@@ -30,7 +30,7 @@ const tabs = [
     label: "Trang chủ",
   },
   {
-    route: "tel:0977857315",
+    route: "tel:0915434226",
     icon: faPhone,
     label: "Gọi",
   },
