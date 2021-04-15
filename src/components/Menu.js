@@ -45,11 +45,16 @@ const Menu = (props) => {
   `)
   const {enableBackgroundImage} = props;
   console.log('enableBackgroundImage',enableBackgroundImage)
-  const numberPhone = "0977857315"
+  const numberPhone = "0915434226"
   return (
     <section id="hero" >
       <section fluid>
-      <Img fluid={data.contactImageSmallSize.childImageSharp.fluid} />
+        <div className="d-none d-md-block">
+        <Img fluid={data.contactImageBigSize.childImageSharp.fluid} />
+        </div>
+        <div className="d-md-none">       
+        <Img fluid={data.contactImageSmallSize.childImageSharp.fluid} />
+        </div>
       </section>
       <Navbar  expand="lg" >
         <Navbar.Brand href="/" className={style.navbarBrandStyle} />

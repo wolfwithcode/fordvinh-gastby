@@ -42,7 +42,7 @@ const tabs = [
 // const bottomTabNavClasses = [style.bottomNavLink,'fixed-bottom', 'navbar-light'].join(' ') ;
 
 export default function MenuBottom() {
-  const numberPhone = "0977857315"
+  const numberPhone = "0915434226"
   return (
     <Card className="d-block d-sm-none" style={{ marginBottom: "15px" }}>
       <Card.Header>

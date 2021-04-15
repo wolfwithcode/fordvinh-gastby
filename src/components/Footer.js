@@ -56,7 +56,7 @@ export default function Footer() {
               <div className="row">
               <p>
                   <FontAwesomeIcon icon={faMobile} />
-                  {"   Hotline: 0977 857 315"}
+                  {"   Hotline: 0915434226"}
                 </p>
               </div>
               
