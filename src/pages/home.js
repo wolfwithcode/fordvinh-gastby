@@ -147,37 +147,37 @@ export default function HomePage() {
         {
           modelName: "Ranger 4X4 XL",
           engine: "2.2L Dầu",
-          price: "616.000.000",
+          price: "628.000.000",
         },
         {
           modelName: "Ranger 4X2 XLS MT",
           engine: "2.2L Dầu",
-          price: "630.000.000",
+          price: "642.000.000",
         },
         {
           modelName: "Ranger 4X2 XLS AT",
           engine: "2.2L Dầu",
-          price: "650.000.000",
+          price: "662.000.000",
         },
-        {
-          modelName: "Ranger 4X4 XLT MT",
-          engine: "2.2L Dầu",
-          price: "754.000.000",
-        },
+        // {
+        //   modelName: "Ranger 4X4 XLT MT",
+        //   engine: "2.2L Dầu",
+        //   price: "754.000.000",
+        // },
         {
           modelName: "Ranger 4X4 XLT AT",
-          engine: "2.2L Dầu",
-          price: "779.000.000",
-        },
-        {
-          modelName: "Ranger WILDTRACK 4X2",
           engine: "2.0L Dầu",
-          price: "853.000.000",
+          price: "811.000.000",
         },
+        // {
+        //   modelName: "Ranger WILDTRACK 4X2",
+        //   engine: "2.0L Dầu",
+        //   price: "853.000.000",
+        // },
         {
           modelName: "Ranger WILDTRACK 4X4",
           engine: "2.0L Dầu",
-          price: "925.000.000",
+          price: "937.000.000",
         },
         {
           modelName: "Ranger RAPTOR",
@@ -186,42 +186,42 @@ export default function HomePage() {
         },
       ],
     },
-    {
-      imgageList: [...FordEcoSportImages],
-      nameCar: "Ecosport",
-      priceCar: "545,000,000",
-      fuelTankCapacity: "60l",
-      bodyStyle: "Sedan",
-      seat: "5 ghế",
-      transmission: "Auto",
-      modelList: [
-        // {
-        //   modelName: "Ecosport 1.5 MT AMB",
-        //   engine: "1.5L Xăng",
-        //   price: "545.000.000",
-        // },
-        // {
-        //   modelName: "Ecosport 1.5 AT AMB",
-        //   engine: "1.5L Xăng",
-        //   price: "569.000.000",
-        // },
-        {
-          modelName: "Ecosport 1.5 AT TREND",
-          engine: "1.5L Xăng",
-          price: "603.000.000",
-        },
-        {
-          modelName: "Ecosport 1.5 AT TITA",
-          engine: "1.5L Xăng",
-          price: "646.000.000",
-        },
-        {
-          modelName: "Ecosport 1.0 AT TITA",
-          engine: "1.5L Ecoboost",
-          price: "686.000.000",
-        },
-      ],
-    },
+    // {
+    //   imgageList: [...FordEcoSportImages],
+    //   nameCar: "Ecosport",
+    //   priceCar: "545,000,000",
+    //   fuelTankCapacity: "60l",
+    //   bodyStyle: "Sedan",
+    //   seat: "5 ghế",
+    //   transmission: "Auto",
+    //   modelList: [
+    //     {
+    //       modelName: "Ecosport 1.5 MT AMB",
+    //       engine: "1.5L Xăng",
+    //       price: "545.000.000",
+    //     },
+    //     {
+    //       modelName: "Ecosport 1.5 AT AMB",
+    //       engine: "1.5L Xăng",
+    //       price: "569.000.000",
+    //     },
+    //     {
+    //       modelName: "Ecosport 1.5 AT TREND",
+    //       engine: "1.5L Xăng",
+    //       price: "603.000.000",
+    //     },
+    //     {
+    //       modelName: "Ecosport 1.5 AT TITA",
+    //       engine: "1.5L Xăng",
+    //       price: "646.000.000",
+    //     },
+    //     {
+    //       modelName: "Ecosport 1.0 AT TITA",
+    //       engine: "1.5L Ecoboost",
+    //       price: "686.000.000",
+    //     },
+    //   ],
+    // },
     {
       imgageList: [...FordEverestImages],
       nameCar: "Everest",
@@ -231,37 +231,37 @@ export default function HomePage() {
       seat: "7 ghế",
       transmission: "Auto",
       modelList: [
-        {
-          modelName: "Everest 4X2 Abm MT",
-          engine: "2.0 turbo",
-          price: "999.000.000",
-        },
-        {
-          modelName: "Everest 4X2 Abm AT",
-          engine: "2.0 turbo",
-          price: "1.052.000.000",
-        },
-        {
-          modelName: "Everest 4X2 TREND",
-          engine: "2.0 turbo",
-          price: "1.112.000.000",
-        },
+        // {
+        //   modelName: "Everest 4X2 Abm MT",
+        //   engine: "2.0 turbo",
+        //   price: "999.000.000",
+        // },
+        // {
+        //   modelName: "Everest 4X2 Abm AT",
+        //   engine: "2.0 turbo",
+        //   price: "1.052.000.000",
+        // },
+        // {
+        //   modelName: "Everest 4X2 TREND",
+        //   engine: "2.0 turbo",
+        //   price: "1.112.000.000",
+        // },
         {
           modelName: "Everest 4X2 Titanium",
           engine: "2.0 turbo",
-          price: "1.181.000.000",
+          price: "1.193.000.000",
         },
         {
           modelName: "Everest 4X4 Titanium",
           engine: "2.0 bi-turbo",
-          price: "1.399.000.000",
+          price: "1.412.000.000",
         },
       ],
     },
     {
       imgageList: [...FordExplorerImages],
       nameCar: "Explorer",
-      priceCar: "1,999,000,000",
+      priceCar: "2,366,000,000",
       fuelTankCapacity: "90l",
       bodyStyle: "Sedan",
       seat: "7 ghế",
@@ -270,31 +270,31 @@ export default function HomePage() {
         {
           modelName: "Explorer Ecoboost",
           engine: "2.3L Xăng",
-          price: "1.999.000.000",
+          price: "2.366.000.000",
         },
       ],
     },
-    {
-      imgageList: [...FordTourneoImages],
-      nameCar: "Tourneo",
-      priceCar: "999,000,000",
-      fuelTankCapacity: "90l",
-      bodyStyle: "Sedan",
-      seat: "7 ghế",
-      transmission: "Auto",
-      modelList: [
-        {
-          modelName: "Tourneo Titanium",
-          engine: "2.0L Xăng",
-          price: "1.069.000.000",
-        },
-        {
-          modelName: "Tourneo Trend",
-          engine: "2.0L Xăng",
-          price: "999.000.000",
-        },
-      ],
-    },
+    // {
+    //   imgageList: [...FordTourneoImages],
+    //   nameCar: "Tourneo",
+    //   priceCar: "999,000,000",
+    //   fuelTankCapacity: "90l",
+    //   bodyStyle: "Sedan",
+    //   seat: "7 ghế",
+    //   transmission: "Auto",
+    //   modelList: [
+    //     {
+    //       modelName: "Tourneo Titanium",
+    //       engine: "2.0L Xăng",
+    //       price: "1.069.000.000",
+    //     },
+    //     {
+    //       modelName: "Tourneo Trend",
+    //       engine: "2.0L Xăng",
+    //       price: "999.000.000",
+    //     },
+    //   ],
+    // },
     {
       imgageList: [...FordTransitImages],
       nameCar: "Transit",
@@ -304,21 +304,21 @@ export default function HomePage() {
       seat: "16 ghế",
       transmission: "Auto",
       modelList: [
-        {
-          modelName: "Transit Tiêu chuẩn",
-          engine: "2.4L Dầu",
-          price: "872.000.000",
-        },
+        // {
+        //   modelName: "Transit Tiêu chuẩn",
+        //   engine: "2.4L Dầu",
+        //   price: "872.000.000",
+        // },
         {
           modelName: "Transit SVP",
           engine: "2.4L Dầu",
-          price: "879.000.000",
+          price: "845.000.000",
         },
-        {
-          modelName: "Transit Cao cấp",
-          engine: "2.4L Dầu",
-          price: "919.000.000",
-        },
+        // {
+        //   modelName: "Transit Cao cấp",
+        //   engine: "2.4L Dầu",
+        //   price: "919.000.000",
+        // },
       ],
     },
   ]
