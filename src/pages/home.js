@@ -248,7 +248,7 @@ export default function HomePage() {
         // },
         {
           modelName: "Everest 4X2 Titanium",
-          engine: "2.0 turbo",
+          engine: "2.0 bi-turbo",
           price: "1.193.000.000",
         },
         {
