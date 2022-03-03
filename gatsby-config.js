@@ -7,6 +7,13 @@ module.exports = {
     author: `@anhld`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-W9F4JTZ",
+        includeInDevelopment: false,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -16,12 +23,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-catch-links`,{
-      resolve: 'gatsby-source-filesystem',
+    `gatsby-plugin-catch-links`,
+    {
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
-      }
+        name: "pages",
+      },
     },
     `gatsby-transformer-remark`,
     {
@@ -30,8 +38,8 @@ module.exports = {
         // I have created a dummy site for us to use with the plugins we discussed
         baseUrl: "fordvinh.com.vn/",
         protocol: "http",
-        hostingWPCOM: false,        
+        hostingWPCOM: false,
       },
-    },    
+    },
   ],
 }
