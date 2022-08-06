@@ -43,6 +43,24 @@ function QuestionTextTemplate(question, i) {
     </Col>
   )
 }
+const toCurrency = (n, curr, LanguageFormat = undefined) =>
+  Intl.NumberFormat(LanguageFormat, {
+    style: "currency",
+    currency: curr,
+  }).format(n)
+
+function translateModelResponse(model) {
+  // "id": 1,
+  // "name": "Ranger 4X4 XL",
+  // "engine": "2.2L Dầu",
+  // "price": "616000000",
+  const { name, engine, price } = model
+  return {
+    modelName: name,
+    engine,
+    price: toCurrency(price, "VND"),
+  }
+}
 function translateOneCarResponse(car) {
   console.log("car ", car)
 
@@ -54,22 +72,15 @@ function translateOneCarResponse(car) {
     body_style,
     seat,
     transmission,
+    models,
   } = car
-  // "id": 1,
-  // "name": "Ranger",
-  // "price": "616000000",
-  // "fuel_tank_capacity": 901,
-  // "body_style": "Sedan",
-  // "seat": "5",
-  // "transmission": "Auto",
-  // imgageList: [...FordRangerImages],
+
   const nameCar = name
   const priceCar = price
   const fuelTankCapacity = fuel_tank_capacity
   const bodyStyle = body_style
-  // const seat = "5 ghế"
-  // const transmission = "Auto"
 
+  const modelList = models.map(translateModelResponse)
   return {
     nameCar,
     priceCar,
@@ -77,7 +88,7 @@ function translateOneCarResponse(car) {
     bodyStyle,
     seat,
     transmission,
-    modelList: [],
+    modelList,
   }
 }
 
