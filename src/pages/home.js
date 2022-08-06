@@ -43,9 +43,75 @@ function QuestionTextTemplate(question, i) {
     </Col>
   )
 }
+function translateOneCarResponse(car) {
+  console.log("car ", car)
+
+  const {
+    id,
+    name,
+    price,
+    fuel_tank_capacity,
+    body_style,
+    seat,
+    transmission,
+  } = car
+  // "id": 1,
+  // "name": "Ranger",
+  // "price": "616000000",
+  // "fuel_tank_capacity": 901,
+  // "body_style": "Sedan",
+  // "seat": "5",
+  // "transmission": "Auto",
+  // imgageList: [...FordRangerImages],
+  const nameCar = name
+  const priceCar = price
+  const fuelTankCapacity = fuel_tank_capacity
+  const bodyStyle = body_style
+  // const seat = "5 ghế"
+  // const transmission = "Auto"
+
+  return {
+    nameCar,
+    priceCar,
+    fuelTankCapacity,
+    bodyStyle,
+    seat,
+    transmission,
+    modelList: [],
+  }
+}
+
+function translateCarsResponse(cars, imgageListMap) {
+  console.log("cars ", cars)
+  console.log("imgageListMap ", imgageListMap)
+
+  return cars.map(car => {
+    const imageList = imgageListMap[car.name]
+    const convertedCar = translateOneCarResponse(car)
+    return { ...convertedCar, imageList }
+  })
+  // return []
+}
 export default function HomePage() {
   const query = useStaticQuery(graphql`
     query {
+      allStrapiCars {
+        nodes {
+          body_style
+          fuel_tank_capacity
+          strapiId
+          seat
+          price
+          name
+          transmission
+          models {
+            engine
+            id
+            name
+            price
+          }
+        }
+      }
       fordEcoSport: allFile(
         filter: { relativeDirectory: { eq: "ford-eco-sport" } }
       ) {
@@ -115,6 +181,8 @@ export default function HomePage() {
     }
   `)
 
+  console.log("query ", query)
+
   const FordEcoSportImages = query.fordEcoSport.nodes.map(
     node => node.childImageSharp.fluid
   )
@@ -134,6 +202,20 @@ export default function HomePage() {
     node => node.childImageSharp.fluid
   )
   // console.log("FordEcoImages ", FordEcoSportImages);
+  const imgageListMap = {
+    Ranger: FordRangerImages,
+    Everest: FordEverestImages,
+    Explorer: FordExplorerImages,
+    Tourneo: FordTourneoImages,
+    EcoSport: FordEcoSportImages,
+    Transit: FordTransitImages,
+  }
+
+  const translatedCarsResponse = translateCarsResponse(
+    query.allStrapiCars.nodes,
+    imgageListMap
+  )
+  console.log("translatedCarsResponse ", translatedCarsResponse)
   const carList = [
     {
       imgageList: [...FordRangerImages],
@@ -186,42 +268,6 @@ export default function HomePage() {
         },
       ],
     },
-    // {
-    //   imgageList: [...FordEcoSportImages],
-    //   nameCar: "Ecosport",
-    //   priceCar: "545,000,000",
-    //   fuelTankCapacity: "60l",
-    //   bodyStyle: "Sedan",
-    //   seat: "5 ghế",
-    //   transmission: "Auto",
-    //   modelList: [
-    //     {
-    //       modelName: "Ecosport 1.5 MT AMB",
-    //       engine: "1.5L Xăng",
-    //       price: "545.000.000",
-    //     },
-    //     {
-    //       modelName: "Ecosport 1.5 AT AMB",
-    //       engine: "1.5L Xăng",
-    //       price: "569.000.000",
-    //     },
-    //     {
-    //       modelName: "Ecosport 1.5 AT TREND",
-    //       engine: "1.5L Xăng",
-    //       price: "603.000.000",
-    //     },
-    //     {
-    //       modelName: "Ecosport 1.5 AT TITA",
-    //       engine: "1.5L Xăng",
-    //       price: "646.000.000",
-    //     },
-    //     {
-    //       modelName: "Ecosport 1.0 AT TITA",
-    //       engine: "1.5L Ecoboost",
-    //       price: "686.000.000",
-    //     },
-    //   ],
-    // },
     {
       imgageList: [...FordEverestImages],
       nameCar: "Everest",
@@ -231,21 +277,6 @@ export default function HomePage() {
       seat: "7 ghế",
       transmission: "Auto",
       modelList: [
-        // {
-        //   modelName: "Everest 4X2 Abm MT",
-        //   engine: "2.0 turbo",
-        //   price: "999.000.000",
-        // },
-        // {
-        //   modelName: "Everest 4X2 Abm AT",
-        //   engine: "2.0 turbo",
-        //   price: "1.052.000.000",
-        // },
-        // {
-        //   modelName: "Everest 4X2 TREND",
-        //   engine: "2.0 turbo",
-        //   price: "1.112.000.000",
-        // },
         {
           modelName: "Everest 4X2 Titanium",
           engine: "2.0 bi-turbo",
@@ -274,27 +305,6 @@ export default function HomePage() {
         },
       ],
     },
-    // {
-    //   imgageList: [...FordTourneoImages],
-    //   nameCar: "Tourneo",
-    //   priceCar: "999,000,000",
-    //   fuelTankCapacity: "90l",
-    //   bodyStyle: "Sedan",
-    //   seat: "7 ghế",
-    //   transmission: "Auto",
-    //   modelList: [
-    //     {
-    //       modelName: "Tourneo Titanium",
-    //       engine: "2.0L Xăng",
-    //       price: "1.069.000.000",
-    //     },
-    //     {
-    //       modelName: "Tourneo Trend",
-    //       engine: "2.0L Xăng",
-    //       price: "999.000.000",
-    //     },
-    //   ],
-    // },
     {
       imgageList: [...FordTransitImages],
       nameCar: "Transit",
@@ -304,21 +314,11 @@ export default function HomePage() {
       seat: "16 ghế",
       transmission: "Auto",
       modelList: [
-        // {
-        //   modelName: "Transit Tiêu chuẩn",
-        //   engine: "2.4L Dầu",
-        //   price: "872.000.000",
-        // },
         {
           modelName: "Transit SVP",
           engine: "2.4L Dầu",
           price: "845.000.000",
         },
-        // {
-        //   modelName: "Transit Cao cấp",
-        //   engine: "2.4L Dầu",
-        //   price: "919.000.000",
-        // },
       ],
     },
   ]
@@ -361,7 +361,7 @@ export default function HomePage() {
         </Row>
         {/* <Row>{carList.map((car, i) => CarInfoTemplate(car, i))}</Row> */}
         <Row>
-          {carList.map((car, i) => (
+          {translatedCarsResponse.map((car, i) => (
             <CarInfo {...car} key={i} />
           ))}
         </Row>
@@ -375,3 +375,17 @@ export default function HomePage() {
     </Layout>
   )
 }
+
+// export const pageQuery = graphql`
+//   query MyQuery {
+//     allStrapiCars {
+//       nodes {
+//         name
+//         price
+//         seat
+//         body_style
+//         strapiId
+//       }
+//     }
+//   }
+// `
