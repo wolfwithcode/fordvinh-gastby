@@ -10,8 +10,8 @@
 .carValue {
   background: blue;
   color: white;
-  clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
-  transition: all 1s linear;
+  border-radius: 50px;
+  border: 1px solid blue;
 }
 
 .carValue:hover {
