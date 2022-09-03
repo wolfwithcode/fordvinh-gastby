@@ -63,7 +63,7 @@ export default function CarInfo(props) {
               <h6 className={CarInfoStyle.carInfo}>{nameCar}</h6>
             </div>
             <h5 className={valueClasses}>
-              VND&nbsp;<span className="car-price">{priceCar}</span>
+              <span className="car-price">{priceCar}</span>
             </h5>
           </div>
         </div>

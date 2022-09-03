@@ -76,7 +76,7 @@ function translateOneCarResponse(car) {
   } = car
 
   const nameCar = name
-  const priceCar = price
+  const priceCar = toCurrency(price, "VND")
   const fuelTankCapacity = fuel_tank_capacity
   const bodyStyle = body_style
 
@@ -227,112 +227,6 @@ export default function HomePage() {
     imgageListMap
   )
   console.log("translatedCarsResponse ", translatedCarsResponse)
-  const carList = [
-    {
-      imgageList: [...FordRangerImages],
-      nameCar: "Ranger",
-      priceCar: "616,000,000",
-      fuelTankCapacity: "90l",
-      bodyStyle: "Sedan",
-      seat: "5 ghế",
-      transmission: "Auto",
-      modelList: [
-        {
-          modelName: "Ranger 4X4 XL",
-          engine: "2.2L Dầu",
-          price: "628.000.000",
-        },
-        {
-          modelName: "Ranger 4X2 XLS MT",
-          engine: "2.2L Dầu",
-          price: "642.000.000",
-        },
-        {
-          modelName: "Ranger 4X2 XLS AT",
-          engine: "2.2L Dầu",
-          price: "662.000.000",
-        },
-        // {
-        //   modelName: "Ranger 4X4 XLT MT",
-        //   engine: "2.2L Dầu",
-        //   price: "754.000.000",
-        // },
-        {
-          modelName: "Ranger 4X4 XLT AT",
-          engine: "2.0L Dầu",
-          price: "811.000.000",
-        },
-        // {
-        //   modelName: "Ranger WILDTRACK 4X2",
-        //   engine: "2.0L Dầu",
-        //   price: "853.000.000",
-        // },
-        {
-          modelName: "Ranger WILDTRACK 4X4",
-          engine: "2.0L Dầu",
-          price: "937.000.000",
-        },
-        {
-          modelName: "Ranger RAPTOR",
-          engine: "2.0L Dầu",
-          price: "1.202.000.000",
-        },
-      ],
-    },
-    {
-      imgageList: [...FordEverestImages],
-      nameCar: "Everest",
-      priceCar: "999,000,000",
-      fuelTankCapacity: "100l",
-      bodyStyle: "Sedan",
-      seat: "7 ghế",
-      transmission: "Auto",
-      modelList: [
-        {
-          modelName: "Everest 4X2 Titanium",
-          engine: "2.0 bi-turbo",
-          price: "1.193.000.000",
-        },
-        {
-          modelName: "Everest 4X4 Titanium",
-          engine: "2.0 bi-turbo",
-          price: "1.412.000.000",
-        },
-      ],
-    },
-    {
-      imgageList: [...FordExplorerImages],
-      nameCar: "Explorer",
-      priceCar: "2,366,000,000",
-      fuelTankCapacity: "90l",
-      bodyStyle: "Sedan",
-      seat: "7 ghế",
-      transmission: "Auto",
-      modelList: [
-        {
-          modelName: "Explorer Ecoboost",
-          engine: "2.3L Xăng",
-          price: "2.366.000.000",
-        },
-      ],
-    },
-    {
-      imgageList: [...FordTransitImages],
-      nameCar: "Transit",
-      priceCar: "872,000,000",
-      fuelTankCapacity: "90l",
-      bodyStyle: "Sedan",
-      seat: "16 ghế",
-      transmission: "Auto",
-      modelList: [
-        {
-          modelName: "Transit SVP",
-          engine: "2.4L Dầu",
-          price: "845.000.000",
-        },
-      ],
-    },
-  ]
   const questionClasses = [HomeStyle.question, "py-5"].join(" ")
   const questionList = [
     {
