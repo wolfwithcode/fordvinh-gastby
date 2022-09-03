@@ -76,7 +76,7 @@ function translateOneCarResponse(car) {
   } = car
 
   const nameCar = name
-  const priceCar = price
+  const priceCar = toCurrency(price, "VND")
   const fuelTankCapacity = fuel_tank_capacity
   const bodyStyle = body_style
 
