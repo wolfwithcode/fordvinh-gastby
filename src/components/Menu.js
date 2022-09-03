@@ -24,69 +24,54 @@ const backgroundStyle = {
   // width: '100%',
   // height: '50vh',
 }
-const Menu = props => {
+const Menu = (props) => {
   const data = useStaticQuery(graphql`
     query {
-      contactImageSmallSize: file(
-        relativePath: { eq: "banner/contact/banner-contact-small-size.png" }
-      ) {
+      contactImageSmallSize: file(relativePath: { eq: "banner/contact/banner-contact-small-size.png"}) {
         childImageSharp {
-          fluid {
+          fluid{
             ...GatsbyImageSharpFluid
           }
         }
       }
-      contactImageBigSize: file(
-        relativePath: { eq: "banner/contact/banner-contact-big-size.png" }
-      ) {
+      contactImageBigSize: file(relativePath: { eq: "banner/contact/banner-contact-big-size.png"}) {
         childImageSharp {
-          fluid {
+          fluid{
             ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `)
-  const { enableBackgroundImage } = props
-  console.log("enableBackgroundImage", enableBackgroundImage)
+  const {enableBackgroundImage} = props;
+  console.log('enableBackgroundImage',enableBackgroundImage)
   const numberPhone = "0915434226"
   return (
-    <section id="hero">
+    <section id="hero" >
       <section fluid>
         <div className="d-none d-md-block">
-          <Img fluid={data.contactImageBigSize.childImageSharp.fluid} />
+        <Img fluid={data.contactImageBigSize.childImageSharp.fluid} />
         </div>
-        <div className="d-md-none">
-          <Img fluid={data.contactImageSmallSize.childImageSharp.fluid} />
+        <div className="d-md-none">       
+        <Img fluid={data.contactImageSmallSize.childImageSharp.fluid} />
         </div>
       </section>
-      <Navbar expand="lg">
+      <Navbar  expand="lg" >
         <Navbar.Brand href="/" className={style.navbarBrandStyle} />
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className={style.navColStyle}>
-          <Nav
-            className={`justify-content-center mx-auto ${style.navLinkStyle}`}
-          >
-            <Nav.Link href="/#priceTable" style={{ color: "black" }}>
-              Bảng báo giá
-            </Nav.Link>
-            <Nav.Link href="/#contact" style={{ color: "black" }}>
-              Liên hệ
-            </Nav.Link>
-            <Nav.Link href={"tel:" + numberPhone} style={{ color: "black" }}>
-              Gọi điện ngay
-            </Nav.Link>
-            <Nav.Link href="/blog" style={{ color: "black" }}>
-              Tin tức
-            </Nav.Link>
-            <Nav.Link href="/mail" style={{ color: "black" }}>
-              Gửi báo giá
-            </Nav.Link>
+          <Nav className={`justify-content-center mx-auto ${style.navLinkStyle}`} >
+            <Nav.Link href="/#priceTable" style={{color:"black"}} >Bảng báo giá</Nav.Link>
+            <Nav.Link href="/#contact" style={{color:"black"}} >Liên hệ</Nav.Link>
+            <Nav.Link href={"tel:"+numberPhone} style={{color:"black"}} >Gọi điện ngay</Nav.Link>
+            <Nav.Link href="/blog" style={{color:"black"}} >Tin tức</Nav.Link>
+            <Nav.Link href="/mail" style={{color:"black"}} >Gửi báo giá</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
     </section>
   )
+  
 }
 
 export default Menu

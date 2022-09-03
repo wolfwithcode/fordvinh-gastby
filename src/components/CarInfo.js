@@ -1,6 +1,6 @@
 import React from "react"
 import CarInfoStyle from "../styles/CarInfo.module.css"
-import { Col, Carousel, Table } from "react-bootstrap"
+import {Col, Carousel, Table} from 'react-bootstrap'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faCar,
@@ -40,7 +40,7 @@ export default function CarInfo(props) {
     transmission,
     modelList,
   } = props
-  //   console.log("imgageList ", imgageList)
+//   console.log("imgageList ", imgageList)
   return (
     <Col className="col-12 col-md-6 col-lg-6 mx-auto my-3">
       {/* <div className="card car-card"> */}
