@@ -19,7 +19,7 @@ import Banner from "../components/Banner"
 import Footer from "../components/Footer"
 
 function QuestionTextTemplate(question, i) {
-  // console.log("question ", question)
+  // //console.log("question ", question)
   const titleText = question.titleText
   const questionInfoText = question.questionInfoText
   const questionColumClasses = [
@@ -62,7 +62,7 @@ function translateModelResponse(model) {
   }
 }
 function translateOneCarResponse(car) {
-  console.log("car ", car)
+  //console.log("car ", car)
 
   const {
     id,
@@ -93,8 +93,8 @@ function translateOneCarResponse(car) {
 }
 
 function translateCarsResponse(cars, imgageListMap) {
-  console.log("cars ", cars)
-  console.log("imgageListMap ", imgageListMap)
+  //console.log("cars ", cars)
+  //console.log("imgageListMap ", imgageListMap)
 
   return cars.map(car => {
     const imageList = imgageListMap[car.name]
@@ -192,7 +192,7 @@ export default function HomePage() {
     }
   `)
 
-  console.log("query ", query)
+  //console.log("query ", query)
 
   const FordEcoSportImages = query.fordEcoSport.nodes.map(
     node => node.childImageSharp.fluid
@@ -212,7 +212,7 @@ export default function HomePage() {
   const FordTourneoImages = query.fordTourneo.nodes.map(
     node => node.childImageSharp.fluid
   )
-  // console.log("FordEcoImages ", FordEcoSportImages);
+  // //console.log("FordEcoImages ", FordEcoSportImages);
   const imgageListMap = {
     Ranger: FordRangerImages,
     Everest: FordEverestImages,
@@ -226,7 +226,7 @@ export default function HomePage() {
     query.allStrapiCars.nodes,
     imgageListMap
   )
-  console.log("translatedCarsResponse ", translatedCarsResponse)
+  //console.log("translatedCarsResponse ", translatedCarsResponse)
   const carList = [
     {
       imgageList: [...FordRangerImages],

@@ -36,7 +36,7 @@ const tabs = [
   },
 ]
 
-// console.log('style ',style)
+// //console.log('style ',style)
 
 // const navbarClasses = [style.navbar,'fixed-bottom', 'navbar-light'].join(' ') ;
 // const bottomTabNavClasses = [style.bottomNavLink,'fixed-bottom', 'navbar-light'].join(' ') ;
