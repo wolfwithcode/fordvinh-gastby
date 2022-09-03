@@ -6,7 +6,7 @@ import HomePage from "./home"
 // import { Helmet } from "react-helmet"
 
 const IndexPage = ({ data }) => {
-  console.log(data)
+  //console.log(data)
   return (
     <div>
       {/* <Helmet>

@@ -62,18 +62,18 @@ class ContactForm extends Component {
   }
 
   checkPhoneNumer(phoneNumber) {
-    console.log("phoneNumer ", phoneNumber)
+    //console.log("phoneNumer ", phoneNumber)
     if (isNaN(phoneNumber) || phoneNumber.length > 11) return false
     return true
   }
   handleSubmit(event) {
     // disable Form Contact in Contact Us page
-    this.props.enableContactForm(false);
+    this.props.enableContactForm(false)
     const phoneNumer = this.state.phoneNumber
-    console.log("this.state.phoneNumber ", phoneNumer)
+    //console.log("this.state.phoneNumber ", phoneNumer)
     const isValid = this.checkPhoneNumer(phoneNumer)
     // this.checkPhoneNumer(phoneNumer);
-    console.log("isValid ", isValid)
+    //console.log("isValid ", isValid)
 
     if (isValid) {
       this.sendEmail(event, this.state)
@@ -90,151 +90,154 @@ class ContactForm extends Component {
     //     name: 'James',
     //     notes: 'Check this out!'
     // };
-    console.log("data ", data)
+    //console.log("data ", data)
     event.preventDefault() //This is important, i'm not sure why, but the email won't send without it
     // emailjs.init("user_8rbLwMZRm6NZGTHWHd4FX");
-    console.log("user id", "user_8rbLwMZRm6NZGTHWHd4FX")
+    //console.log("user id", "user_8rbLwMZRm6NZGTHWHd4FX")
     emailjs
       .send("gmail", "fordvinhcontact", data, "user_8rbLwMZRm6NZGTHWHd4FX")
       .then(
         function (response) {
-          console.log("SUCCESS!", response.status, response.text)
+          //console.log("SUCCESS!", response.status, response.text)
         },
         function (error) {
-          console.log("FAILED...", error)
+          //console.log("FAILED...", error)
         }
       )
   }
 
-  render() {    
-      return (
-        <Layout>
-          <SEO title="Báo giá xe Ford Vinh" />
-          <div>
-            <div className={["container", style.container].join(" ")}>
-              <form onSubmit={this.handleSubmit} className={style.form}>
-                <h3 className={style.title}>Nhận báo giá với Ford Vinh</h3>
-                <div className={formControlClasses}>
-                  <label className={style.label}>Chọn mẫu xe</label>
-                  <select
-                    name="carModel"
-                    value={this.state.carModel}
-                    onChange={this.handleChange}
-                    className={style.input}
-                    defaultValue="Ford Ecosport"
-                    required
-                  >
-                    <option value="" selected hidden>Mẫu xe...</option>
-                    {carModelList.map((car, index) => (
-                      <option key={"car-" + index} value={car}>
-                        {car}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div className={formControlClasses}>
-                  <label className={style.label}>Tên:</label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={this.state.name}
-                    onChange={this.handleChange}
-                    placeholder="Họ tên"
-                    className={style.input}
-                    required
-                  />
-                </div>
-                <div className={formControlClasses}>
-                  <label className={style.label}>Điện thoại:</label>
-                  <input
-                    name="phone"
-                    type="text"
-                    value={this.state.phoneNumber}
-                    onChange={this.handleChange}
-                    placeholder="Điện thoại"
-                    className={style.input}
-                    required
-                  />
-                </div>
-                <div className={formControlClasses}>
-                  <label className={style.label}>Địa chỉ:</label>
-                  <input
-                    name="address"
-                    type="text"
-                    value={this.state.address}
-                    onChange={this.handleChange}
-                    placeholder="Địa chỉ"
-                    className={style.input}
-                    required
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  style={{ width: "100%", marginTop: "10px" }}
+  render() {
+    return (
+      <Layout>
+        <SEO title="Báo giá xe Ford Vinh" />
+        <div>
+          <div className={["container", style.container].join(" ")}>
+            <form onSubmit={this.handleSubmit} className={style.form}>
+              <h3 className={style.title}>Nhận báo giá với Ford Vinh</h3>
+              <div className={formControlClasses}>
+                <label className={style.label}>Chọn mẫu xe</label>
+                <select
+                  name="carModel"
+                  value={this.state.carModel}
+                  onChange={this.handleChange}
+                  className={style.input}
+                  defaultValue="Ford Ecosport"
+                  required
                 >
-                  Đăng ký{" "}
-                </button>
-                <small
-                  className={style.error}
-                  style={{
-                    visibility: this.state.errorVisible ? "visible" : "hidden",
-                  }}
-                >
-                  Xin vui lòng nhập đúng số điện thoại
-                </small>
-              </form>
-            </div>
+                  <option value="" selected hidden>
+                    Mẫu xe...
+                  </option>
+                  {carModelList.map((car, index) => (
+                    <option key={"car-" + index} value={car}>
+                      {car}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className={formControlClasses}>
+                <label className={style.label}>Tên:</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                  placeholder="Họ tên"
+                  className={style.input}
+                  required
+                />
+              </div>
+              <div className={formControlClasses}>
+                <label className={style.label}>Điện thoại:</label>
+                <input
+                  name="phone"
+                  type="text"
+                  value={this.state.phoneNumber}
+                  onChange={this.handleChange}
+                  placeholder="Điện thoại"
+                  className={style.input}
+                  required
+                />
+              </div>
+              <div className={formControlClasses}>
+                <label className={style.label}>Địa chỉ:</label>
+                <input
+                  name="address"
+                  type="text"
+                  value={this.state.address}
+                  onChange={this.handleChange}
+                  placeholder="Địa chỉ"
+                  className={style.input}
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="btn btn-primary"
+                style={{ width: "100%", marginTop: "10px" }}
+              >
+                Đăng ký{" "}
+              </button>
+              <small
+                className={style.error}
+                style={{
+                  visibility: this.state.errorVisible ? "visible" : "hidden",
+                }}
+              >
+                Xin vui lòng nhập đúng số điện thoại
+              </small>
+            </form>
           </div>
-        </Layout>
-      )
+        </div>
+      </Layout>
+    )
   }
 }
-
-
 
 function InfoMessage() {
   return (
     <Layout>
-    <SEO title="Báo giá xe Ford Vinh" />
-    <div>
-      <div className={["container"].join(" ")}>
-        <Card>
-          <Card.Body>
-            <Card.Title>Thông báo</Card.Title>
-            <Card.Text>
-              Chúng tôi đã tiếp nhận yêu cầu báo giá. Xin vui lòng đợi
-              trong giây lát.
-            </Card.Text>
-            <Button variant="primary" href="/">
-              Trang chủ
-            </Button>
-          </Card.Body>
-        </Card>
+      <SEO title="Báo giá xe Ford Vinh" />
+      <div>
+        <div className={["container"].join(" ")}>
+          <Card>
+            <Card.Body>
+              <Card.Title>Thông báo</Card.Title>
+              <Card.Text>
+                Chúng tôi đã tiếp nhận yêu cầu báo giá. Xin vui lòng đợi trong
+                giây lát.
+              </Card.Text>
+              <Button variant="primary" href="/">
+                Trang chủ
+              </Button>
+            </Card.Body>
+          </Card>
+        </div>
       </div>
-    </div>
-  </Layout>
+    </Layout>
   )
 }
 
-
 export default class ContactUsPage extends Component {
-  constructor(props){
-    super(props);
-    this.enableContactForm = this.enableContactForm.bind(this);
+  constructor(props) {
+    super(props)
+    this.enableContactForm = this.enableContactForm.bind(this)
     this.state = {
       enableFormContact: true,
     }
   }
 
-  enableContactForm(isEnable){
-    this.setState({enableFormContact: isEnable})
+  enableContactForm(isEnable) {
+    this.setState({ enableFormContact: isEnable })
   }
   render() {
     return (
       <div>
-        {this.state.enableFormContact ? <ContactForm enableContactForm={this.enableContactForm}/> : <InfoMessage/> }
+        {this.state.enableFormContact ? (
+          <ContactForm enableContactForm={this.enableContactForm} />
+        ) : (
+          <InfoMessage />
+        )}
       </div>
     )
   }

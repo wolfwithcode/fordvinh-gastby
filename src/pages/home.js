@@ -19,7 +19,7 @@ import Banner from "../components/Banner"
 import Footer from "../components/Footer"
 
 function QuestionTextTemplate(question, i) {
-  // console.log("question ", question)
+  // //console.log("question ", question)
   const titleText = question.titleText
   const questionInfoText = question.questionInfoText
   const questionColumClasses = [
@@ -62,7 +62,7 @@ function translateModelResponse(model) {
   }
 }
 function translateOneCarResponse(car) {
-  console.log("car ", car)
+  //console.log("car ", car)
 
   const {
     id,
@@ -93,8 +93,8 @@ function translateOneCarResponse(car) {
 }
 
 function translateCarsResponse(cars, imgageListMap) {
-  console.log("cars ", cars)
-  console.log("imgageListMap ", imgageListMap)
+  //console.log("cars ", cars)
+  //console.log("imgageListMap ", imgageListMap)
 
   return cars.map(car => {
     const imageList = imgageListMap[car.name]
@@ -192,7 +192,7 @@ export default function HomePage() {
     }
   `)
 
-  console.log("query ", query)
+  //console.log("query ", query)
 
   const FordEcoSportImages = query.fordEcoSport.nodes.map(
     node => node.childImageSharp.fluid
@@ -212,7 +212,7 @@ export default function HomePage() {
   const FordTourneoImages = query.fordTourneo.nodes.map(
     node => node.childImageSharp.fluid
   )
-  // console.log("FordEcoImages ", FordEcoSportImages);
+  // //console.log("FordEcoImages ", FordEcoSportImages);
   const imgageListMap = {
     Ranger: FordRangerImages,
     Everest: FordEverestImages,
@@ -226,7 +226,113 @@ export default function HomePage() {
     query.allStrapiCars.nodes,
     imgageListMap
   )
-  console.log("translatedCarsResponse ", translatedCarsResponse)
+  //console.log("translatedCarsResponse ", translatedCarsResponse)
+  const carList = [
+    {
+      imgageList: [...FordRangerImages],
+      nameCar: "Ranger",
+      priceCar: "616,000,000",
+      fuelTankCapacity: "90l",
+      bodyStyle: "Sedan",
+      seat: "5 ghế",
+      transmission: "Auto",
+      modelList: [
+        {
+          modelName: "Ranger 4X4 XL",
+          engine: "2.2L Dầu",
+          price: "628.000.000",
+        },
+        {
+          modelName: "Ranger 4X2 XLS MT",
+          engine: "2.2L Dầu",
+          price: "642.000.000",
+        },
+        {
+          modelName: "Ranger 4X2 XLS AT",
+          engine: "2.2L Dầu",
+          price: "662.000.000",
+        },
+        // {
+        //   modelName: "Ranger 4X4 XLT MT",
+        //   engine: "2.2L Dầu",
+        //   price: "754.000.000",
+        // },
+        {
+          modelName: "Ranger 4X4 XLT AT",
+          engine: "2.0L Dầu",
+          price: "811.000.000",
+        },
+        // {
+        //   modelName: "Ranger WILDTRACK 4X2",
+        //   engine: "2.0L Dầu",
+        //   price: "853.000.000",
+        // },
+        {
+          modelName: "Ranger WILDTRACK 4X4",
+          engine: "2.0L Dầu",
+          price: "937.000.000",
+        },
+        {
+          modelName: "Ranger RAPTOR",
+          engine: "2.0L Dầu",
+          price: "1.202.000.000",
+        },
+      ],
+    },
+    {
+      imgageList: [...FordEverestImages],
+      nameCar: "Everest",
+      priceCar: "999,000,000",
+      fuelTankCapacity: "100l",
+      bodyStyle: "Sedan",
+      seat: "7 ghế",
+      transmission: "Auto",
+      modelList: [
+        {
+          modelName: "Everest 4X2 Titanium",
+          engine: "2.0 bi-turbo",
+          price: "1.193.000.000",
+        },
+        {
+          modelName: "Everest 4X4 Titanium",
+          engine: "2.0 bi-turbo",
+          price: "1.412.000.000",
+        },
+      ],
+    },
+    {
+      imgageList: [...FordExplorerImages],
+      nameCar: "Explorer",
+      priceCar: "2,366,000,000",
+      fuelTankCapacity: "90l",
+      bodyStyle: "Sedan",
+      seat: "7 ghế",
+      transmission: "Auto",
+      modelList: [
+        {
+          modelName: "Explorer Ecoboost",
+          engine: "2.3L Xăng",
+          price: "2.366.000.000",
+        },
+      ],
+    },
+    {
+      imgageList: [...FordTransitImages],
+      nameCar: "Transit",
+      priceCar: "872,000,000",
+      fuelTankCapacity: "90l",
+      bodyStyle: "Sedan",
+      seat: "16 ghế",
+      transmission: "Auto",
+      modelList: [
+        {
+          modelName: "Transit SVP",
+          engine: "2.4L Dầu",
+          price: "845.000.000",
+        },
+      ],
+    },
+  ]
   const questionClasses = [HomeStyle.question, "py-5"].join(" ")
   const questionList = [
     {

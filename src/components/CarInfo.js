@@ -40,7 +40,7 @@ export default function CarInfo(props) {
     transmission,
     modelList,
   } = props
-  console.log("props ", props)
+  //console.log("props ", props)
   return (
     <Col className="col-12 col-md-6 col-lg-6 mx-auto my-3">
       {/* <div className="card car-card"> */}
