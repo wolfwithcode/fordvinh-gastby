@@ -92,7 +92,8 @@ export default function CarInfo(props) {
           <tbody>
             {modelList.map((model, i) => (
               <tr key={i}>
-                <td>{model.modelName + " " + model.interior}</td>
+                <td>{`${model.modelName} 
+                ${model.interior}`}</td>
                 <td>{model.engine}</td>
                 <td>{model.price}</td>
               </tr>
