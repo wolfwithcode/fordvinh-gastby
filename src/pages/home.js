@@ -60,6 +60,7 @@ function translateModelResponse(model) {
     modelName: name,
     engine,
     price: toCurrency(price, "VND"),
+    priceNumber: price,
     interior,
   }
 }
@@ -82,7 +83,9 @@ function translateOneCarResponse(car) {
   const fuelTankCapacity = fuel_tank_capacity
   const bodyStyle = body_style
 
-  const modelList = models.map(translateModelResponse)
+  const modelList = models
+    .map(translateModelResponse)
+    .sort((a, b) => Number(a.priceNumber) - Number(b.priceNumber))
   return {
     nameCar,
     priceCar,
