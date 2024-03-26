@@ -98,8 +98,8 @@ function translateOneCarResponse(car) {
 }
 
 function translateCarsResponse(cars, imgageListMap) {
-  //console.log("cars ", cars)
-  //console.log("imgageListMap ", imgageListMap)
+  console.log("cars ", cars)
+  console.log("imgageListMap ", imgageListMap)
 
   return cars.map(car => {
     const imageList = imgageListMap[car.name]
@@ -195,6 +195,17 @@ export default function HomePage() {
           }
         }
       }
+      fordTerritory: allFile(
+        filter: { relativeDirectory: { eq: "ford-territory" } }
+      ) {
+        nodes {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -218,7 +229,12 @@ export default function HomePage() {
   const FordTourneoImages = query.fordTourneo.nodes.map(
     node => node.childImageSharp.fluid
   )
-  // //console.log("FordEcoImages ", FordEcoSportImages);
+
+  const FordTerritoryImages = query.fordTerritory.nodes.map(
+    node => node.childImageSharp.fluid
+  )
+
+  console.log("FordTerritoryImages ", FordTerritoryImages)
   const imgageListMap = {
     Ranger: FordRangerImages,
     Everest: FordEverestImages,
@@ -226,6 +242,7 @@ export default function HomePage() {
     Tourneo: FordTourneoImages,
     EcoSport: FordEcoSportImages,
     Transit: FordTransitImages,
+    Territory: FordTerritoryImages,
   }
 
   const translatedCarsResponse = translateCarsResponse(
